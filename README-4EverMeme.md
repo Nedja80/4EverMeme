@@ -1,6 +1,10 @@
-# 4EverMeme (4EVM)
+<p align="center">
+  <img src="https://i.postimg.cc/5y0H78jp/09DF90F9-3A8B-49B3-8A87-C2FFFF78C819.png" alt="4EverMeme Logo" width="120"/>
+</p>
 
-4EverMeme is a BEP-20 token deployed on the BNB Smart Chain (BSC), created to bring together blockchain innovation and meme culture through community-driven engagement and creativity.
+# 4EverMeme (4EVM)# 4EverMeme (4EVM)
+
+# 4EverMeme (4EVM)4EverMeme is a BEP-20 token deployed on the BNB Smart Chain (BSC), created to bring together blockchain innovation and meme culture through community-driven engagement and creativity.
 
 ---
 
