@@ -1,110 +1,545 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>4EverMeme (4EVM) — Official Site</title>
-  <meta name="description" content="4EverMeme (4EVM) — a BEP-20 meme token on BNB Smart Chain. Creativity, transparency and community." />
-  <meta property="og:title" content="4EverMeme (4EVM)" />
-  <meta property="og:description" content="BEP-20 meme token on BNB Smart Chain. Join the community!" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://raw.githubusercontent.com/nedja80/4EverMeme/main/logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="favicon.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4EverMeme (4EVM) – Official Token</title>
+
+  <!-- Icone social -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
   <style>
-    :root { --bg:#0b0f14; --panel:#121823; --text:#e9eef5; --muted:#9bb0c9; --accent:#5ee1a8; }
-    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,Segoe UI,Roboto,Helvetica,Arial}
-    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
-    .wrap{max-width:1000px;margin:auto;padding:24px}
-    header{padding:48px 0;text-align:center}
-    .badge{display:inline-block;background:var(--panel);border:1px solid #1f2a3b;padding:6px 10px;border-radius:999px;color:var(--muted);font-size:14px}
-    h1{font-size:48px;margin:16px 0 8px} h2{margin:32px 0 12px}
-    .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px}
-    .btn{background:var(--accent);color:#062b1f;padding:12px 18px;border-radius:10px;font-weight:700;border:0;cursor:pointer}
-    .btn.secondary{background:#1f2a3b;color:var(--text)}
-    section{background:var(--panel);border:1px solid #1f2a3b;border-radius:14px;padding:20px;margin:16px 0}
-    .grid{display:grid;gap:16px} @media(min-width:800px){.grid{grid-template-columns:1fr 1fr}}
-    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
-    footer{color:var(--muted);text-align:center;padding:30px 0}
-    .small{font-size:13px;color:var(--muted)}
+    /* ===== BASE & STARFIELD ===== */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #f5f5f5;
+      overflow-x: hidden;
+    }
+
+    #stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: black;
+    }
+
+    /* ===== LAYOUT ===== */
+    .page-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1000px;
+      margin: 80px auto 40px auto;
+      padding: 20px;
+      background: rgba(10, 10, 20, 0.7);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(4px);
+    }
+
+    /* ===== TOP BAR ===== */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .logo-text {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .logo-circle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #8fff9f, #45b36b 60%, #1b6133 100%);
+      border: 2px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .language-select select {
+      padding: 6px 10px;
+      background: #181818;
+      color: #f5f5f5;
+      border-radius: 6px;
+      border: 1px solid #555;
+      cursor: pointer;
+    }
+
+    /* ===== HERO ===== */
+    h1 {
+      text-align: center;
+      font-size: 32px;
+      margin: 10px 0;
+    }
+
+    #subtitle {
+      text-align: center;
+      margin: 0 0 25px 0;
+      opacity: 0.9;
+    }
+
+    .chain-pill {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .chain-pill span {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      font-size: 13px;
+    }
+
+    .hero-buttons {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 15px;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      margin: 4px;
+      min-width: 150px;
+    }
+
+    .buy-btn {
+      background: #4ce37d;
+      color: #041307;
+      font-weight: 600;
+    }
+
+    .bsc-btn {
+      background: #222;
+      color: #f5f5f5;
+    }
+
+    .copy-btn {
+      background: #111;
+      color: #f5f5f5;
+    }
+
+    #contract {
+      text-align: center;
+      margin-top: 8px;
+      font-family: "Courier New", monospace;
+      font-size: 13px;
+      opacity: 0.85;
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      margin-top: 35px;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .two-col {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .two-col > div {
+      flex: 1 1 280px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 18px;
+      border-radius: 12px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    /* HOW TO BUY */
+    .steps {
+      counter-reset: step;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .steps li {
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .steps li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #4ce37d;
+      color: #021307;
+      font-weight: 700;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ROADMAP */
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .roadmap-card {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      font-size: 14px;
+    }
+
+    .roadmap-card h3 {
+      margin-top: 0;
+      margin-bottom: 6px;
+      font-size: 16px;
+    }
+
+    .roadmap-card span {
+      font-size: 12px;
+      opacity: 0.8;
+    }
+
+    /* SOCIAL */
+    .social-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .social-list a {
+      text-decoration: none;
+      color: #f5f5f5;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .social-list a:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 12px;
+      opacity: 0.75;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      .container {
+        margin-top: 60px;
+      }
+      h1 {
+        font-size: 26px;
+      }
+      .top-bar {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+      }
+      .language-select {
+        align-self: flex-end;
+      }
+    }
   </style>
 </head>
-<body>
-  <div class="wrap">
-    <header>
-      <div class="badge">BNB Smart Chain · BEP-20</div>
-      <h1>4EverMeme (4EVM)</h1>
-      <p>Where meme culture meets transparent blockchain — built for creativity, fun, and community.</p>
-      <div class="cta">
-        <a class="btn" href="https://pancakeswap.finance/swap?outputCurrency=0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef" target="_blank" rel="noopener">Buy on PancakeSwap</a>
-        <a class="btn secondary" href="https://bscscan.com/token/0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef" target="_blank" rel="noopener">View on BscScan</a>
-        <button class="btn secondary" id="copy">Copy Contract</button>
-      </div>
-      <div class="small" style="margin-top:8px">
-        <span class="mono" id="addr">0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef</span>
-      </div>
-    </header>
 
-    <section class="grid">
-      <div>
-        <h2>About</h2>
-        <p><strong>4EverMeme (4EVM)</strong> is a BEP-20 token on BNB Smart Chain focused on community-driven entertainment and transparency.</p>
-        <ul class="small">
-          <li>No buy/sell tax (contract verified on BscScan)</li>
-          <li>Liquidity pair: WBNB / 4EVM</li>
-          <li>Open-source metadata and public links</li>
-        </ul>
+<body>
+<canvas id="stars"></canvas>
+
+<div class="page-wrapper">
+  <div class="container">
+
+    <!-- Top bar: logo + language -->
+    <div class="top-bar">
+      <div class="logo-text">
+        <div class="logo-circle"></div>
+        <span>4EverMeme</span>
       </div>
-      <div>
-        <h2>Token Info</h2>
-        <ul>
-          <li><b>Name:</b> 4EverMeme</li>
-          <li><b>Symbol:</b> 4EVM</li>
-          <li><b>Decimals:</b> 18</li>
-          <li><b>Total Supply:</b> 1,000,000,000</li>
-          <li><b>Contract:</b> <span class="mono">0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef</span></li>
-        </ul>
+      <div class="language-select">
+        <select id="langSwitcher">
+          <option value="en">English</option>
+          <option value="it">Italiano</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <div class="chain-pill">
+      <span id="chainPill">BNB Smart Chain · BEP-20</span>
+    </div>
+
+    <h1 id="title">4EverMeme (4EVM)</h1>
+    <p id="subtitle">
+      Where meme culture meets transparent blockchain — built for creativity, fun, and community.
+    </p>
+
+    <div class="hero-buttons">
+      <button class="buy-btn" id="btnBuy">Buy on PancakeSwap</button>
+      <button class="bsc-btn" id="btnBsc">View on BscScan</button>
+      <button class="copy-btn" onclick="copyAddress()">Copy Contract</button>
+      <p id="contract">
+        0xDE008b6e97ad5D05d4f49D3949E91E165f3092Ef
+      </p>
+    </div>
+
+    <!-- ABOUT + TOKEN INFO -->
+    <section id="about">
+      <div class="two-col">
+        <div>
+          <h2 id="aboutTitle">About</h2>
+          <p id="aboutText">
+            4EverMeme (4EVM) is a BEP-20 token on BNB Smart Chain focused on community-driven
+            entertainment and transparency.
+          </p>
+          <ul>
+            <li id="li1">No buy/sell tax</li>
+            <li id="li2">Liquidity pair: WBNB / 4EVM</li>
+            <li id="li3">Open-source metadata and public links</li>
+          </ul>
+        </div>
+        <div>
+          <h2 id="infoTitle">Token Info</h2>
+          <ul>
+            <li><strong>Name:</strong> 4EverMeme</li>
+            <li><strong>Symbol:</strong> 4EVM</li>
+            <li><strong>Decimals:</strong> 18</li>
+            <li><strong>Total Supply:</strong> 1,000,000,000</li>
+            <li><strong>Contract:</strong> 0xDE008b6e97ad5D05d4f49D3949E91E165f3092Ef</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2>How to Buy</h2>
-      <ol>
-        <li>Install/Apri MetaMask e seleziona <b>BNB Smart Chain</b>.</li>
-        <li>Visita PancakeSwap e importa il contratto <span class="mono">0xDE00…092Ef</span>.</li>
-        <li>Scambia BNB ⇄ 4EVM. Se serve, alza leggermente lo slippage.</li>
+    <!-- HOW TO BUY -->
+    <section id="how">
+      <h2 id="howTitle">How to Buy</h2>
+      <p id="howText">
+        Follow these simple steps to get your 4EVM tokens:
+      </p>
+      <ol class="steps">
+        <li>Connect your wallet to the BNB Smart Chain (BSC).</li>
+        <li>Go to PancakeSwap and select the WBNB / 4EVM pair.</li>
+        <li>Paste the contract address if needed and import the token.</li>
+        <li>Choose the amount of WBNB you want to swap and confirm the trade.</li>
+        <li>After confirmation, 4EVM will appear in your wallet.</li>
       </ol>
     </section>
 
-    <section class="grid">
-      <div>
-        <h2>Links</h2>
-        <ul>
-          <li><a href="https://t.me/4evermeme" target="_blank">Telegram</a></li>
-          <li><a href="https://x.com/4evermeme" target="_blank">Twitter/X</a></li>
-          <li><a href="https://github.com/nedja80/4EverMeme" target="_blank">GitHub</a></li>
-          <li><a href="https://bscscan.com/address/0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef#code" target="_blank">Contract (Verified)</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Disclaimer</h2>
-        <p class="small">This is a community-driven, experimental project. Nothing here is financial advice. Do your own research. Tokens may be volatile and carry risk.</p>
+    <!-- ROADMAP -->
+    <section id="roadmap">
+      <h2 id="roadmapTitle">Roadmap</h2>
+      <div class="roadmap-grid">
+        <div class="roadmap-card">
+          <h3>Phase 1 – Launch</h3>
+          <span>Q4 2024</span>
+          <ul>
+            <li>Token deployment on BSC</li>
+            <li>Contract verification on BscScan</li>
+            <li>Initial liquidity and listing on DEX</li>
+          </ul>
+        </div>
+        <div class="roadmap-card">
+          <h3>Phase 2 – Community</h3>
+          <span>Q1 2025</span>
+          <ul>
+            <li>Website & social channels growth</li>
+            <li>Community memes contests</li>
+            <li>Listings on tracking platforms (DexScreener, etc.)</li>
+          </ul>
+        </div>
+        <div class="roadmap-card">
+          <h3>Phase 3 – Expansion</h3>
+          <span>Q2 2025 and beyond</span>
+          <ul>
+            <li>Partnerships & collaborations</li>
+            <li>More utilities for 4EVM holders</li>
+            <li>Long-term community incentives</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <footer class="small">© 4EverMeme — Built by the community.</footer>
+    <!-- SOCIAL / COMMUNITY -->
+    <section id="socials">
+      <h2 id="socialsTitle">Community & Socials</h2>
+      <p id="socialsText">
+        Join the community to follow updates, memes, and announcements:
+      </p>
+      <div class="social-list">
+        <!-- 🔗 Sostituisci i link con quelli reali dei tuoi social -->
+        <a href="https://t.me/4evermeme" target="_blank" rel="noopener">
+          <i class="fab fa-telegram"></i> Telegram
+        </a>
+        <a href="https://x.com/4evermeme" target="_blank" rel="noopener">
+          <i class="fab fa-x-twitter"></i> Twitter / X
+        </a>
+        <a href="https://github.com/nedja80/4EverMeme" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="https://bscscan.com/token/0xDE008b6e97ad5D05d4f49D3949E91E165f3092Ef"
+           target="_blank" rel="noopener">
+          <i class="fa-solid fa-file-contract"></i> BscScan
+        </a>
+      </div>
+    </section>
+
   </div>
 
-  <script>
-    const btn = document.getElementById('copy');
-    const addr = document.getElementById('addr').textContent.trim();
-    btn.addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(addr);
-        btn.textContent = 'Copied!';
-        setTimeout(()=>btn.textContent='Copy Contract',1200);
-      } catch(e){ alert(addr); }
+  <footer>
+    <span id="footerText">
+      4EverMeme (4EVM) is a community-driven and experimental project. Always do your own research before participating.
+    </span>
+  </footer>
+</div>
+
+<script>
+  /* ===== COPY CONTRACT ===== */
+  function copyAddress() {
+    const addr = "0xDE008b6e97ad5D05d4f49D3949E91E165f3092Ef";
+    navigator.clipboard.writeText(addr).then(() => {
+      alert("Contract copied!");
     });
-  </script>
+  }
+
+  /* ===== LANGUAGE SYSTEM ===== */
+  const lang = {
+    en: {
+      chainPill: "BNB Smart Chain · BEP-20",
+      title: "4EverMeme (4EVM)",
+      subtitle:
+        "Where meme culture meets transparent blockchain — built for creativity, fun, and community.",
+      aboutTitle: "About",
+      aboutText:
+        "4EverMeme (4EVM) is a BEP-20 token on BNB Smart Chain focused on community-driven entertainment and transparency.",
+      li1: "No buy/sell tax",
+      li2: "Liquidity pair: WBNB / 4EVM",
+      li3: "Open-source metadata and public links",
+      infoTitle: "Token Info",
+      howTitle: "How to Buy",
+      howText: "Follow these simple steps to get your 4EVM tokens:",
+      roadmapTitle: "Roadmap",
+      socialsTitle: "Community & Socials",
+      socialsText:
+        "Join the community to follow updates, memes, and announcements:",
+      btnBuy: "Buy on PancakeSwap",
+      btnBsc: "View on BscScan",
+      footerText:
+        "4EverMeme (4EVM) is a community-driven and experimental project. Always do your own research before participating."
+    },
+    it: {
+      chainPill: "BNB Smart Chain · BEP-20",
+      title: "4EverMeme (4EVM)",
+      subtitle:
+        "Dove la cultura meme incontra la blockchain trasparente — creatività, divertimento e comunità.",
+      aboutTitle: "Informazioni",
+      aboutText:
+        "4EverMeme (4EVM) è un token BEP-20 su BNB Smart Chain focalizzato su intrattenimento e trasparenza guidati dalla community.",
+      li1: "Nessuna tassa di acquisto/vendita",
+      li2: "Coppia di liquidità: WBNB / 4EVM",
+      li3: "Metadata open-source e link pubblici",
+      infoTitle: "Dettagli Token",
+      howTitle: "Come acquistare",
+      howText: "Segui questi semplici passaggi per ottenere i token 4EVM:",
+      roadmapTitle: "Roadmap",
+      socialsTitle: "Community & Social",
+      socialsText:
+        "Unisciti alla community per seguire aggiornamenti, meme e annunci:",
+      btnBuy: "Compra su PancakeSwap",
+      btnBsc: "Vedi su BscScan",
+      footerText:
+        "4EverMeme (4EVM) è un progetto sperimentale guidato dalla community. Fai sempre le tue ricerche prima di partecipare."
+    }
+  };
+
+  document.getElementById("langSwitcher").addEventListener("change", (e) => {
+    const l = lang[e.target.value];
+    for (const id in l) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = l[id];
+    }
+  });
+
+  /* ===== STARFIELD BACKGROUND ===== */
+  const canvas = document.getElementById("stars");
+  const ctx = canvas.getContext("2d");
+  let stars = [];
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener("resize", resize);
+
+  for (let i = 0; i < 220; i++) {
+    stars.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      size: Math.random() * 2,
+      speed: Math.random() * 0.5 + 0.15
+    });
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "white";
+
+    stars.forEach((s) => {
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+      ctx.fill();
+
+      s.y += s.speed;
+      if (s.y > canvas.height) {
+        s.y = 0;
+        s.x = Math.random() * canvas.width;
+      }
+    });
+
+    requestAnimationFrame(animate);
+  }
+  animate();
+</script>
 </body>
 </html>
