@@ -1,6 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
+# 4EverMeme (4EVM)
+<p align="center">
+  <img src="https://i.postimg.cc/5y0H78jp/09DF90F9-3A8B-49B3-8A87-C2FFFF78C819.png" alt="4EverMeme Logo" width="120"/>
+</p>
 
+# 4EverMeme (4EVM)
 contract FourEverMeme {
     string public name = "4EverMeme";
     string public symbol = "4EVM";
