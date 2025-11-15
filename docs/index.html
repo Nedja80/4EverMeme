@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>4EverMeme (4EVM) 🚀 To The Moon!</title>
-  <meta name="description" content="4EverMeme - The ultimate community meme token on BSC with games, stats, and more!">
+  <meta name="description" content="4EverMeme - Play games, have fun, join the community!">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
@@ -77,19 +77,6 @@
       50% { opacity: 1; }
     }
     
-    .shooting-star {
-      position: absolute;
-      width: 100px;
-      height: 2px;
-      background: linear-gradient(90deg, #fff, transparent);
-      animation: shoot 3s linear;
-    }
-    
-    @keyframes shoot {
-      from { transform: translate(0, 0); opacity: 1; }
-      to { transform: translate(-300px, 300px); opacity: 0; }
-    }
-    
     .content {
       position: relative;
       z-index: 1;
@@ -110,6 +97,7 @@
       display: flex;
       align-items: center;
       gap: 15px;
+      position: relative;
     }
     
     .logo {
@@ -121,39 +109,7 @@
       animation: float 3s ease-in-out infinite;
       transition: all 0.3s;
       position: relative;
-    }
-    
-    .logo.flying {
-      animation: rocketFlyUp 3s ease-out forwards;
-    }
-    
-    @keyframes rocketFlyUp {
-      0% { 
-        transform: translateY(0) scale(1) rotate(0deg);
-        filter: drop-shadow(0 0 20px rgba(255,215,0,0.6));
-      }
-      20% {
-        transform: translateY(-20px) scale(1.1) rotate(-5deg);
-        filter: drop-shadow(0 0 30px rgba(255,215,0,0.8));
-      }
-      40% {
-        transform: translateY(-100px) scale(1.2) rotate(5deg);
-        filter: drop-shadow(0 0 40px rgba(255,215,0,1));
-      }
-      60% {
-        transform: translateY(-300px) scale(0.8) rotate(-10deg);
-        filter: drop-shadow(0 0 50px rgba(255,215,0,1));
-      }
-      80% {
-        transform: translateY(-600px) scale(0.5) rotate(15deg);
-        filter: drop-shadow(0 0 60px rgba(255,215,0,1));
-        opacity: 1;
-      }
-      100% { 
-        transform: translateY(-1000px) scale(0.2) rotate(30deg);
-        filter: drop-shadow(0 0 80px rgba(255,215,0,1));
-        opacity: 0;
-      }
+      z-index: 2;
     }
     
     @keyframes float {
@@ -161,28 +117,83 @@
       50% { transform: translateY(-10px); }
     }
     
-    .rocket-trail {
+    .logo.flying {
+      animation: rocketFlyUp 3s ease-out forwards !important;
+    }
+    
+    @keyframes rocketFlyUp {
+      0% { 
+        transform: translateY(0) scale(1) rotate(0deg);
+        filter: drop-shadow(0 0 20px rgba(255,215,0,0.6));
+      }
+      10% {
+        transform: translateY(-30px) scale(1.1) rotate(-5deg);
+        filter: drop-shadow(0 0 40px rgba(255,215,0,0.9));
+      }
+      30% {
+        transform: translateY(-150px) scale(1.2) rotate(5deg);
+        filter: drop-shadow(0 0 60px rgba(255,165,0,1));
+      }
+      60% {
+        transform: translateY(-400px) scale(0.8) rotate(-15deg);
+        filter: drop-shadow(0 0 80px rgba(255,100,0,1));
+      }
+      100% { 
+        transform: translateY(-800px) scale(0.2) rotate(30deg);
+        filter: drop-shadow(0 0 100px rgba(255,0,0,1));
+        opacity: 0;
+      }
+    }
+    
+    .flame {
       position: absolute;
-      bottom: -10px;
+      bottom: -20px;
       left: 50%;
       transform: translateX(-50%);
-      width: 4px;
-      height: 0;
-      background: linear-gradient(to bottom, rgba(255,215,0,0.8), transparent);
+      width: 30px;
+      height: 40px;
+      opacity: 0;
       pointer-events: none;
-      z-index: -1;
+      z-index: 1;
     }
     
-    .logo.flying + .rocket-trail {
-      animation: trail 3s ease-out;
+    .logo.flying ~ .flame {
+      animation: flameEffect 3s ease-out;
     }
     
-    @keyframes trail {
-      0% { height: 0; }
-      20% { height: 50px; }
-      40% { height: 150px; }
-      60% { height: 300px; }
-      100% { height: 600px; opacity: 0; }
+    @keyframes flameEffect {
+      0% { opacity: 0; height: 0; }
+      10% { opacity: 1; height: 60px; }
+      30% { opacity: 1; height: 150px; }
+      60% { opacity: 0.8; height: 300px; }
+      100% { opacity: 0; height: 500px; }
+    }
+    
+    .flame::before {
+      content: '🔥';
+      position: absolute;
+      font-size: 30px;
+      animation: flameFlicker 0.1s infinite;
+    }
+    
+    @keyframes flameFlicker {
+      0%, 100% { transform: scale(1) rotate(-5deg); }
+      50% { transform: scale(1.2) rotate(5deg); }
+    }
+    
+    .particles {
+      position: absolute;
+      pointer-events: none;
+      z-index: 3;
+    }
+    
+    .logo.flying ~ .particles .particle {
+      animation: particleExplode 2s ease-out;
+    }
+    
+    @keyframes particleExplode {
+      0% { opacity: 1; transform: translate(0, 0) scale(1); }
+      100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(0); }
     }
     
     .brand h1 {
@@ -195,6 +206,7 @@
     .nav-controls {
       display: flex;
       gap: 15px;
+      align-items: center;
     }
     
     .theme-btn, .game-btn {
@@ -327,7 +339,6 @@
     
     .btn-primary:hover {
       transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 15px 50px rgba(255,215,0,0.6);
     }
     
     .btn-secondary {
@@ -478,104 +489,6 @@
       left: 0;
     }
     
-    .newsletter {
-      background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(0,217,255,0.1));
-      border: 1px solid rgba(255,215,0,0.3);
-      border-radius: 25px;
-      padding: 40px;
-      text-align: center;
-      margin: 60px 0;
-    }
-    
-    .newsletter h3 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-    
-    .newsletter p {
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
-    
-    .newsletter-form {
-      display: flex;
-      gap: 10px;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-    
-    .newsletter input {
-      flex: 1;
-      padding: 14px 20px;
-      border-radius: 25px;
-      border: 1px solid rgba(255,255,255,0.2);
-      background: rgba(0,0,0,0.3);
-      color: var(--text);
-      font-size: 14px;
-    }
-    
-    .newsletter button {
-      padding: 14px 30px;
-      border-radius: 25px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      border: none;
-      color: #000;
-      font-weight: 700;
-      cursor: pointer;
-    }
-    
-    .customizer {
-      position: fixed;
-      right: -300px;
-      top: 100px;
-      width: 280px;
-      background: rgba(0,0,0,0.95);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 15px 0 0 15px;
-      padding: 20px;
-      transition: right 0.3s;
-      z-index: 999;
-    }
-    
-    .customizer.open {
-      right: 0;
-    }
-    
-    .customizer-toggle {
-      position: absolute;
-      left: -40px;
-      top: 20px;
-      width: 40px;
-      height: 40px;
-      background: rgba(0,0,0,0.95);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 8px 0 0 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      font-size: 20px;
-    }
-    
-    .color-picker {
-      margin: 15px 0;
-    }
-    
-    .color-picker label {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 14px;
-      color: var(--muted);
-    }
-    
-    .color-picker input {
-      width: 100%;
-      height: 40px;
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    
     .game-modal {
       display: none;
       position: fixed;
@@ -595,30 +508,98 @@
       display: flex;
     }
     
-    .game-box {
+    .game-menu {
       background: rgba(10,14,39,0.98);
       border: 2px solid var(--primary);
       border-radius: 25px;
-      padding: 30px;
-      text-align: center;
-      max-width: 600px;
+      padding: 40px;
+      max-width: 500px;
       width: 100%;
+      text-align: center;
     }
     
-    .game-box h3 {
+    .game-menu h3 {
       font-size: 32px;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       background: linear-gradient(135deg, var(--primary), var(--accent));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     
-    #tetrisCanvas {
+    .game-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .game-item {
+      background: rgba(255,215,0,0.1);
+      border: 2px solid rgba(255,215,0,0.3);
+      border-radius: 15px;
+      padding: 20px;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .game-item:hover {
+      background: rgba(255,215,0,0.2);
+      border-color: var(--primary);
+      transform: scale(1.05);
+    }
+    
+    .game-item .icon {
+      font-size: 32px;
+    }
+    
+    .game-item .info {
+      text-align: left;
+      flex: 1;
+    }
+    
+    .game-item .title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    
+    .game-item .desc {
+      font-size: 12px;
+      color: var(--muted);
+    }
+    
+    .game-container {
+      background: rgba(10,14,39,0.98);
+      border: 2px solid var(--primary);
+      border-radius: 25px;
+      padding: 30px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      display: none;
+    }
+    
+    .game-container.active {
+      display: block;
+    }
+    
+    .game-container h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    canvas {
       border: 3px solid var(--primary);
       border-radius: 15px;
       background: #000;
       display: block;
       margin: 20px auto;
+      max-width: 100%;
     }
     
     .game-score {
@@ -633,31 +614,15 @@
       gap: 10px;
       justify-content: center;
       flex-wrap: wrap;
-    }
-    
-    .game-info {
-      background: rgba(0,217,255,0.1);
-      border: 1px solid rgba(0,217,255,0.3);
-      border-radius: 15px;
-      padding: 15px;
       margin: 20px 0;
-      text-align: left;
-      font-size: 14px;
-      color: var(--muted);
-    }
-    
-    .game-info strong {
-      color: var(--accent);
     }
     
     .mobile-controls {
       display: none;
       grid-template-columns: repeat(3, 1fr);
       gap: 10px;
-      margin: 20px 0;
+      margin: 20px auto;
       max-width: 300px;
-      margin-left: auto;
-      margin-right: auto;
     }
     
     .mobile-btn {
@@ -669,9 +634,6 @@
       cursor: pointer;
       user-select: none;
       transition: all 0.1s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
     
     .mobile-btn:active {
@@ -679,21 +641,32 @@
       transform: scale(0.95);
     }
     
-    .mobile-btn.rotate {
-      grid-column: 2;
-    }
-    
-    .mobile-btn.drop {
-      grid-column: 1 / -1;
-    }
-    
     @media (hover: none) and (pointer: coarse) {
-      .mobile-controls {
-        display: grid;
-      }
-      .game-info {
-        font-size: 12px;
-      }
+      .mobile-controls { display: grid; }
+    }
+    
+    .mic-indicator {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin: 20px auto;
+      border: 3px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .mic-wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0%;
+      background: rgba(255,215,0,0.3);
+      transition: height 0.1s;
     }
     
     footer {
@@ -709,30 +682,17 @@
       margin-bottom: 20px;
     }
     
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    
-    .footer-links a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-    
     @media (max-width: 768px) {
       h2 { font-size: 48px; }
       .grid { grid-template-columns: 1fr; }
-      .newsletter-form { flex-direction: column; }
       .chart-box { height: 400px; }
-      #tetrisCanvas { width: 250px; height: 500px; }
+      canvas { max-width: 100%; height: auto; }
     }
   </style>
 </head>
 <body>
   <div class="banner" id="banner">
-    🎮 <strong>NEW!</strong> Play TETRIS game • Compete • Customize colors! 
+    🎮 <strong>NEW GAMES!</strong> Tetris • Flappy 4EVM • Scream 4EVM (Voice control!)
     <button onclick="document.getElementById('banner').style.display='none'">×</button>
   </div>
 
@@ -742,14 +702,15 @@
     <nav>
       <div class="logo-section">
         <img src="https://i.postimg.cc/5y0H78jp/09DF90F9-3A8B-49B3-8A87-C2FFFF78C819.png" class="logo" id="logo" onclick="launchRocket()">
-        <div class="rocket-trail" id="rocketTrail"></div>
+        <div class="flame"></div>
+        <div class="particles" id="particles"></div>
         <div class="brand">
           <h1>4EVERMEME</h1>
           <p style="font-size:12px;color:var(--muted);letter-spacing:2px">TO THE MOON!</p>
         </div>
       </div>
       <div class="nav-controls">
-        <button class="game-btn" onclick="openGame()" title="Play Tetris">🎮</button>
+        <button class="game-btn" onclick="openGameMenu()" title="Play Games">🎮</button>
         <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">🌙</button>
         <select id="lang" onchange="changeLang(this.value)">
           <option value="en">🇬🇧 EN</option>
@@ -763,9 +724,9 @@
 
     <section class="hero">
       <div class="badge">⛓️ BNB SMART CHAIN • BEP-20</div>
-      <h2 id="title">4EVERMEME (4EVM)</h2>
+      <h2>4EVERMEME (4EVM)</h2>
       <p class="subtitle" id="subtitle">
-        Where meme culture meets transparent blockchain — built for creativity, fun, and community! 🚀
+        Where meme culture meets transparent blockchain — Play games, have fun, join the community! 🚀
       </p>
 
       <div class="live-stats">
@@ -784,13 +745,13 @@
       </div>
 
       <div class="btns">
-        <button class="btn btn-primary" onclick="openGame()">
-          🎮 PLAY TETRIS
+        <button class="btn btn-primary" onclick="openGameMenu()">
+          🎮 PLAY GAMES
         </button>
-        <a href="https://pancakeswap.finance/swap?outputCurrency=0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef&chain=bsc" class="btn btn-secondary" target="_blank" onclick="playSound('click')">
+        <a href="https://pancakeswap.finance/swap?outputCurrency=0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef&chain=bsc" class="btn btn-secondary" target="_blank">
           🥞 <span id="buyBtn">Buy on PancakeSwap</span>
         </a>
-        <a href="https://bscscan.com/token/0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef" class="btn btn-secondary" target="_blank" onclick="playSound('click')">
+        <a href="https://bscscan.com/token/0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef" class="btn btn-secondary" target="_blank">
           🔍 <span id="viewBtn">View on BscScan</span>
         </a>
         <button class="btn btn-secondary" onclick="copyContract()">
@@ -805,9 +766,9 @@
       </div>
 
       <div class="social">
-        <a href="https://t.me/4evermeme" target="_blank" onclick="playSound('click')">📱</a>
-        <a href="https://x.com/4evermeme" target="_blank" onclick="playSound('click')">🐦</a>
-        <a href="https://github.com/nedja80/4EverMeme" target="_blank" onclick="playSound('click')">💻</a>
+        <a href="https://t.me/4evermeme" target="_blank">📱</a>
+        <a href="https://x.com/4evermeme" target="_blank">🐦</a>
+        <a href="https://github.com/nedja80/4EverMeme" target="_blank">💻</a>
       </div>
     </section>
 
@@ -818,43 +779,31 @@
       </div>
     </section>
 
-    <section class="newsletter">
-      <h3>📧 Stay Updated!</h3>
-      <p>Join our newsletter for exclusive updates and giveaways</p>
-      <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
-        <input type="email" placeholder="Enter your email" required id="emailInput">
-        <button type="submit" id="subscribeBtn">Subscribe</button>
-      </form>
-    </section>
-
     <div class="grid">
       <div class="card">
-        <h3>📖 <span id="aboutTitle">About</span></h3>
+        <h3>📖 About</h3>
         <div class="divider"></div>
-        <p id="aboutText">4EverMeme (4EVM) is a community-driven BEP-20 token on BNB Smart Chain focused on transparency and fun!</p>
+        <p>4EverMeme (4EVM) is a community-driven BEP-20 token on BNB Smart Chain focused on transparency and fun!</p>
         <ul>
           <li>No buy/sell tax - 100% community owned</li>
           <li>Verified smart contract on BscScan</li>
-          <li>Play-to-earn Tetris game</li>
-          <li>Open-source docs on GitHub</li>
+          <li>3 fun games to play!</li>
+          <li>Open-source on GitHub</li>
         </ul>
       </div>
 
       <div class="card">
-        <h3>🎮 <span id="gameTitle">Play & Earn</span></h3>
+        <h3>🎮 Games</h3>
         <div class="divider"></div>
-        <p id="gameText">Play our Tetris game! Clear lines to earn points and compete on the leaderboard!</p>
-        <button class="btn btn-primary" onclick="openGame()" style="width: 100%;">
-          🎮 Play Tetris
+        <p>Play our awesome games and compete on the leaderboard!</p>
+        <ul>
+          <li>🎮 Tetris - Classic puzzle game</li>
+          <li>🐦 Flappy 4EVM - Tap to fly!</li>
+          <li>🎤 Scream 4EVM - Voice control!</li>
+        </ul>
+        <button class="btn btn-primary" onclick="openGameMenu()" style="width:100%;margin-top:15px">
+          🎮 Play Now
         </button>
-        <div style="margin-top: 20px;">
-          <div style="font-size: 12px; color: var(--muted); margin-bottom: 10px;">🏆 Top Scores:</div>
-          <div id="leaderboard" style="font-size: 14px; color: var(--muted);">
-            1. Diamond Hands - 1250 pts<br>
-            2. Moon Walker - 980 pts<br>
-            3. Hodler Pro - 750 pts
-          </div>
-        </div>
       </div>
 
       <div class="card">
@@ -882,105 +831,92 @@
 
     <footer>
       <p>⚠️ Community-driven project. Always DYOR!</p>
-      <div class="footer-links">
-        <a href="https://github.com/nedja80/4EverMeme" target="_blank">GitHub</a>
-        <span style="color:var(--muted)">•</span>
-        <a href="https://t.me/4evermeme" target="_blank">Telegram</a>
-        <span style="color:var(--muted)">•</span>
-        <a href="https://x.com/4evermeme" target="_blank">Twitter</a>
-      </div>
       <p style="margin-top:20px;font-size:11px">© 2024 4EverMeme • Made with ❤️</p>
     </footer>
   </div>
 
-  <div class="customizer" id="customizer">
-    <div class="customizer-toggle" onclick="toggleCustomizer()">🎨</div>
-    <h3 style="margin-bottom:20px">Customize Theme</h3>
-    
-    <div class="color-picker">
-      <label>Primary Color</label>
-      <input type="color" value="#FFD700" id="primaryColor" onchange="updateColor('primary', this.value)">
-    </div>
-    
-    <div class="color-picker">
-      <label>Accent Color</label>
-      <input type="color" value="#00D9FF" id="accentColor" onchange="updateColor('accent', this.value)">
-    </div>
-    
-    <button class="btn btn-secondary" onclick="resetColors()" style="width:100%;margin-top:20px">
-      Reset Colors
-    </button>
-  </div>
-
+  <!-- Game Modal -->
   <div class="game-modal" id="gameModal">
-    <div class="game-box">
-      <h3>🎮 4EVM TETRIS</h3>
-      <p style="color:var(--muted);margin-bottom:10px">Stack blocks and clear lines!</p>
-      
+    <!-- Game Menu -->
+    <div class="game-menu" id="gameMenu">
+      <h3>🎮 Choose Your Game</h3>
+      <div class="game-list">
+        <div class="game-item" onclick="openGame('tetris')">
+          <div class="icon">🎮</div>
+          <div class="info">
+            <div class="title">Tetris</div>
+            <div class="desc">Classic puzzle - Stack and clear lines!</div>
+          </div>
+        </div>
+        <div class="game-item" onclick="openGame('flappy')">
+          <div class="icon">🐦</div>
+          <div class="info">
+            <div class="title">Flappy 4EVM</div>
+            <div class="desc">Tap to fly - Avoid obstacles!</div>
+          </div>
+        </div>
+        <div class="game-item" onclick="openGame('scream')">
+          <div class="icon">🎤</div>
+          <div class="info">
+            <div class="title">Scream 4EVM</div>
+            <div class="desc">Voice control - SHOUT to jump! 😂</div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-secondary" onclick="closeGameModal()" style="margin-top:20px">Close</button>
+    </div>
+
+    <!-- Tetris Game -->
+    <div class="game-container" id="tetrisGame">
+      <h3>🎮 TETRIS</h3>
       <div class="game-score">
-        Score: <span id="score">0</span> | Lines: <span id="lines">0</span> | Level: <span id="level">1</span>
+        Score: <span id="tetrisScore">0</span> | Lines: <span id="tetrisLines">0</span>
       </div>
-      
       <canvas id="tetrisCanvas" width="300" height="600"></canvas>
-      
-      <div class="game-info">
-        <strong>Controls:</strong><br>
-        ← → Move | ↑ Rotate | ↓ Fast Drop | SPACE Hard Drop | P Pause
+      <div class="mobile-controls" id="tetrisMobile">
+        <div class="mobile-btn" ontouchstart="tetrisMove('left')">←</div>
+        <div class="mobile-btn" ontouchstart="tetrisMove('rotate')">↻</div>
+        <div class="mobile-btn" ontouchstart="tetrisMove('right')">→</div>
+        <div class="mobile-btn" ontouchstart="tetrisMove('down')">↓</div>
+        <div class="mobile-btn" style="grid-column:1/-1" ontouchstart="tetrisMove('drop')">DROP</div>
       </div>
-      
-      <div class="mobile-controls" id="mobileControls">
-        <div class="mobile-btn" onmousedown="mobileControl('left')" ontouchstart="mobileControl('left')">←</div>
-        <div class="mobile-btn rotate" onmousedown="mobileControl('rotate')" ontouchstart="mobileControl('rotate')">↻</div>
-        <div class="mobile-btn" onmousedown="mobileControl('right')" ontouchstart="mobileControl('right')">→</div>
-        <div class="mobile-btn" onmousedown="mobileControl('down')" ontouchstart="mobileControl('down')">↓</div>
-        <div class="mobile-btn drop" onmousedown="mobileControl('drop')" ontouchstart="mobileControl('drop')">DROP</div>
-      </div>
-      
       <div class="game-controls">
-        <button class="btn btn-primary" onclick="startGame()">START</button>
-        <button class="btn btn-secondary" onclick="pauseGame()" id="pauseBtn">PAUSE</button>
-        <button class="btn btn-secondary" onclick="closeGame()">CLOSE</button>
+        <button class="btn btn-primary" onclick="startTetris()">START</button>
+        <button class="btn btn-secondary" onclick="backToMenu()">BACK</button>
+      </div>
+    </div>
+
+    <!-- Flappy Game -->
+    <div class="game-container" id="flappyGame">
+      <h3>🐦 FLAPPY 4EVM</h3>
+      <div class="game-score">Score: <span id="flappyScore">0</span> | Best: <span id="flappyBest">0</span></div>
+      <canvas id="flappyCanvas" width="400" height="600"></canvas>
+      <p style="color:var(--muted);margin:15px 0">Tap screen or press SPACE to fly!</p>
+      <div class="game-controls">
+        <button class="btn btn-primary" onclick="startFlappy()">START</button>
+        <button class="btn btn-secondary" onclick="backToMenu()">BACK</button>
+      </div>
+    </div>
+
+    <!-- Scream Game -->
+    <div class="game-container" id="screamGame">
+      <h3>🎤 SCREAM 4EVM</h3>
+      <div class="game-score">Score: <span id="screamScore">0</span> | Best: <span id="screamBest">0</span></div>
+      <div class="mic-indicator">
+        <div class="mic-wave" id="micWave"></div>
+        <span>🎤</span>
+      </div>
+      <canvas id="screamCanvas" width="400" height="400"></canvas>
+      <p style="color:var(--muted);margin:15px 0">🔊 SHOUT to make 4EVM jump! The louder, the higher!</p>
+      <div class="game-controls">
+        <button class="btn btn-primary" onclick="startScream()">START</button>
+        <button class="btn btn-secondary" onclick="stopScream()">STOP</button>
+        <button class="btn btn-secondary" onclick="backToMenu()">BACK</button>
       </div>
     </div>
   </div>
 
   <script>
-    // Sound effects
-    const sounds = {
-      click: new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIF2m98OScTgwPUKXh8LdlGwU7k9n0zn0sBS+Az/LciTYIF2q98OWcTQ'),
-      move: new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIF2m98OScTgwPUKXh8LdlGwU7k9n0zn0sBS+Az/LciTYIF2q98OWcTQ'),
-      rotate: new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIF2m98OScTgwPUKXh8LdlGwU7k9n0zn0sBS+Az/LciTYIF2q98OWcTQ'),
-      line: new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIF2m98OScTgwPUKXh8LdlGwU7k9n0zn0sBS+Az/LciTYIF2q98OWcTQ'),
-      drop: new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIF2m98OScTgwPUKXh8LdlGwU7k9n0zn0sBS+Az/LciTYIF2q98OWcTQ')
-    };
-    
-    function playSound(type) {
-      try {
-        const sound = sounds[type];
-        if(sound) {
-          sound.currentTime = 0;
-          sound.volume = 0.3;
-          sound.play().catch(() => {});
-        }
-      } catch(e) {}
-    }
-    
-    // Rocket launch animation
-    function launchRocket() {
-      const logo = document.getElementById('logo');
-      const trail = document.getElementById('rocketTrail');
-      
-      playSound('click');
-      
-      logo.classList.add('flying');
-      if(trail) trail.classList.add('flying');
-      
-      setTimeout(() => {
-        logo.classList.remove('flying');
-        if(trail) trail.classList.remove('flying');
-      }, 3000);
-    }
-
     // Stars
     const starsEl = document.getElementById('stars');
     for(let i=0; i<150; i++) {
@@ -991,16 +927,8 @@
       star.style.animationDelay = Math.random()*3+'s';
       starsEl.appendChild(star);
     }
-    
-    setInterval(() => {
-      const s = document.createElement('div');
-      s.className = 'shooting-star';
-      s.style.left = Math.random()*100+'%';
-      s.style.top = Math.random()*50+'%';
-      starsEl.appendChild(s);
-      setTimeout(() => s.remove(), 3000);
-    }, 2000);
 
+    // Theme
     let theme = 'dark';
     function toggleTheme() {
       theme = theme === 'dark' ? 'light' : 'dark';
@@ -1011,100 +939,410 @@
         document.body.removeAttribute('data-theme');
         document.getElementById('themeBtn').textContent = '🌙';
       }
-      playSound('click');
     }
 
+    // Copy contract
     function copyContract() {
-      navigator.clipboard.writeText('0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef').then(() => {
-        document.getElementById('copyBtn').textContent = '✓ Copied!';
-        playSound('click');
-        setTimeout(() => {
-          document.getElementById('copyBtn').textContent = 'Copy Contract';
-        }, 2000);
-      });
+      navigator.clipboard.writeText('0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef');
+      document.getElementById('copyBtn').textContent = '✓ Copied!';
+      setTimeout(() => {
+        document.getElementById('copyBtn').textContent = 'Copy Contract';
+      }, 2000);
     }
 
-    function subscribeNewsletter(e) {
-      e.preventDefault();
-      const email = document.getElementById('emailInput').value;
-      playSound('click');
-      alert('✓ Thanks for subscribing! Email: ' + email);
-      document.getElementById('emailInput').value = '';
-      document.getElementById('subscribeBtn').textContent = '✓ Subscribed!';
+    // Rocket launch with FIRE!
+    function launchRocket() {
+      const logo = document.getElementById('logo');
+      const particles = document.getElementById('particles');
+      
+      logo.classList.add('flying');
+      
+      // Create fire particles
+      for(let i=0; i<20; i++) {
+        const particle = document.createElement('div');
+        particle.style.position = 'absolute';
+        particle.style.left = '30px';
+        particle.style.top = '30px';
+        particle.textContent = ['🔥','✨','💥'][Math.floor(Math.random()*3)];
+        particle.style.fontSize = '20px';
+        particle.className = 'particle';
+        particle.style.setProperty('--tx', (Math.random()-0.5)*200+'px');
+        particle.style.setProperty('--ty', (Math.random()-0.5)*200+'px');
+        particles.appendChild(particle);
+      }
+      
       setTimeout(() => {
-        document.getElementById('subscribeBtn').textContent = 'Subscribe';
+        logo.classList.remove('flying');
+        particles.innerHTML = '';
       }, 3000);
     }
 
-    function toggleCustomizer() {
-      document.getElementById('customizer').classList.toggle('open');
-      playSound('click');
+    // Game Modal
+    function openGameMenu() {
+      document.getElementById('gameModal').classList.add('active');
+      document.getElementById('gameMenu').style.display = 'block';
     }
 
-    function updateColor(type, value) {
-      document.documentElement.style.setProperty('--'+type, value);
-      playSound('click');
+    function closeGameModal() {
+      document.getElementById('gameModal').classList.remove('active');
+      stopAllGames();
     }
 
-    function resetColors() {
-      document.getElementById('primaryColor').value = '#FFD700';
-      document.getElementById('accentColor').value = '#00D9FF';
-      updateColor('primary', '#FFD700');
-      updateColor('accent', '#00D9FF');
-      playSound('click');
+    function openGame(game) {
+      document.getElementById('gameMenu').style.display = 'none';
+      document.getElementById(game+'Game').classList.add('active');
     }
 
-    const translations = {
-      en: {
-        subtitle: 'Where meme culture meets transparent blockchain — built for creativity, fun, and community! 🚀',
-        buyBtn: 'Buy on PancakeSwap',
-        viewBtn: 'View on BscScan',
-        copyBtn: 'Copy Contract',
-        aboutTitle: 'About',
-        aboutText: '4EverMeme (4EVM) is a community-driven BEP-20 token on BNB Smart Chain focused on transparency and fun!',
-        gameTitle: 'Play & Earn',
-        gameText: 'Play our Tetris game! Clear lines to earn points and compete on the leaderboard!'
-      },
-      it: {
-        subtitle: 'Dove la cultura meme incontra la blockchain trasparente — pensato per creatività, divertimento e community! 🚀',
-        buyBtn: 'Compra su PancakeSwap',
-        viewBtn: 'Vedi su BscScan',
-        copyBtn: 'Copia Contratto',
-        aboutTitle: 'Informazioni',
-        aboutText: '4EverMeme (4EVM) è un token BEP-20 guidato dalla community su BNB Smart Chain focalizzato su trasparenza e divertimento!',
-        gameTitle: 'Gioca & Guadagna',
-        gameText: 'Gioca a Tetris! Elimina linee per guadagnare punti e competere nella classifica!'
-      },
-      fr: {
-        subtitle: 'Où la culture des mèmes rencontre la blockchain transparente — conçu pour la créativité, le plaisir et la communauté! 🚀',
-        buyBtn: 'Acheter sur PancakeSwap',
-        viewBtn: 'Voir sur BscScan',
-        copyBtn: 'Copier le Contrat',
-        aboutTitle: 'À propos',
-        aboutText: '4EverMeme (4EVM) est un token BEP-20 communautaire sur BNB Smart Chain axé sur la transparence et le plaisir!',
-        gameTitle: 'Jouer & Gagner',
-        gameText: 'Jouez à notre jeu Tetris! Effacez des lignes pour gagner des points et concourir au classement!'
-      },
-      es: {
-        subtitle: '¡Donde la cultura de los memes se encuentra con blockchain transparente — construido para creatividad, diversión y comunidad! 🚀',
-        buyBtn: 'Comprar en PancakeSwap',
-        viewBtn: 'Ver en BscScan',
-        copyBtn: 'Copiar Contrato',
-        aboutTitle: 'Acerca de',
-        aboutText: '4EverMeme (4EVM) es un token BEP-20 impulsado por la comunidad en BNB Smart Chain enfocado en transparencia y diversión!',
-        gameTitle: 'Jugar y Ganar',
-        gameText: '¡Juega nuestro juego Tetris! ¡Elimina líneas para ganar puntos y competir en la tabla de clasificación!'
-      },
-      cn: {
-        subtitle: '模因文化与透明区块链相遇 — 为创造力、乐趣和社区而构建！🚀',
-        buyBtn: '在PancakeSwap购买',
-        viewBtn: '在BscScan查看',
-        copyBtn: '复制合约',
-        aboutTitle: '关于',
-        aboutText: '4EverMeme (4EVM) 是BNB智能链上的社区驱动BEP-20代币，专注于透明度和乐趣！',
-        gameTitle: '玩游戏赚钱',
-        gameText: '玩我们的俄罗斯方块游戏！消除行来赚取积分并在排行榜上竞争！'
+    function backToMenu() {
+      document.querySelectorAll('.game-container').forEach(g => g.classList.remove('active'));
+      document.getElementById('gameMenu').style.display = 'block';
+      stopAllGames();
+    }
+
+    function stopAllGames() {
+      tetrisRunning = false;
+      flappyRunning = false;
+      stopScream();
+    }
+
+    // TETRIS GAME
+    const tetrisCanvas = document.getElementById('tetrisCanvas');
+    const tetrisCtx = tetrisCanvas.getContext('2d');
+    const COLS = 10, ROWS = 20, BLOCK = 30;
+    const SHAPES = [[[1,1,1,1]],[[1,1],[1,1]],[[0,1,0],[1,1,1]],[[1,0,0],[1,1,1]],[[0,0,1],[1,1,1]],[[0,1,1],[1,1,0]],[[1,1,0],[0,1,1]]];
+    const COLORS = ['#00D9FF','#FFD700','#FF6B9D','#4ADE80','#F97316','#A78BFA','#FB923C'];
+    let tetrisBoard = [], tetrisScore = 0, tetrisLines = 0, tetrisPiece = null, tetrisRunning = false;
+
+    function startTetris() {
+      tetrisBoard = Array(ROWS).fill(null).map(() => Array(COLS).fill(0));
+      tetrisScore = 0;
+      tetrisLines = 0;
+      tetrisRunning = true;
+      spawnTetris();
+      tetrisLoop();
+    }
+
+    function spawnTetris() {
+      const i = Math.floor(Math.random()*SHAPES.length);
+      tetrisPiece = {shape: SHAPES[i], color: COLORS[i], x: 4, y: 0};
+    }
+
+    function drawTetris() {
+      tetrisCtx.fillStyle = '#000';
+      tetrisCtx.fillRect(0,0,300,600);
+      
+      for(let y=0; y<ROWS; y++) {
+        for(let x=0; x<COLS; x++) {
+          if(tetrisBoard[y][x]) {
+            tetrisCtx.fillStyle = tetrisBoard[y][x];
+            tetrisCtx.fillRect(x*BLOCK, y*BLOCK, BLOCK-1, BLOCK-1);
+          }
+        }
       }
+      
+      if(tetrisPiece) {
+        tetrisCtx.fillStyle = tetrisPiece.color;
+        tetrisPiece.shape.forEach((row, dy) => {
+          row.forEach((val, dx) => {
+            if(val) {
+              tetrisCtx.fillRect((tetrisPiece.x+dx)*BLOCK, (tetrisPiece.y+dy)*BLOCK, BLOCK-1, BLOCK-1);
+            }
+          });
+        });
+      }
+    }
+
+    function tetrisLoop() {
+      if(!tetrisRunning) return;
+      if(!moveTetris(0,1)) {
+        lockTetris();
+        clearTetrisLines();
+        spawnTetris();
+        if(checkTetrisCollision(0,0)) {
+          tetrisRunning = false;
+          alert('Game Over! Score: '+tetrisScore);
+          return;
+        }
+      }
+      drawTetris();
+      setTimeout(tetrisLoop, 500);
+    }
+
+    function moveTetris(dx, dy) {
+      tetrisPiece.x += dx;
+      tetrisPiece.y += dy;
+      if(checkTetrisCollision(0,0)) {
+        tetrisPiece.x -= dx;
+        tetrisPiece.y -= dy;
+        return false;
+      }
+      return true;
+    }
+
+    function rotateTetris() {
+      const rotated = tetrisPiece.shape[0].map((_, i) => tetrisPiece.shape.map(row => row[i]).reverse());
+      const prev = tetrisPiece.shape;
+      tetrisPiece.shape = rotated;
+      if(checkTetrisCollision(0,0)) tetrisPiece.shape = prev;
+    }
+
+    function checkTetrisCollision(dx, dy) {
+      return tetrisPiece.shape.some((row, y) =>
+        row.some((val, x) => {
+          if(!val) return false;
+          const newX = tetrisPiece.x+x+dx;
+          const newY = tetrisPiece.y+y+dy;
+          return newX<0 || newX>=COLS || newY>=ROWS || (newY>=0 && tetrisBoard[newY][newX]);
+        })
+      );
+    }
+
+    function lockTetris() {
+      tetrisPiece.shape.forEach((row, y) => {
+        row.forEach((val, x) => {
+          if(val && tetrisPiece.y+y>=0) {
+            tetrisBoard[tetrisPiece.y+y][tetrisPiece.x+x] = tetrisPiece.color;
+          }
+        });
+      });
+    }
+
+    function clearTetrisLines() {
+      let cleared = 0;
+      for(let y=ROWS-1; y>=0; y--) {
+        if(tetrisBoard[y].every(c => c)) {
+          tetrisBoard.splice(y,1);
+          tetrisBoard.unshift(Array(COLS).fill(0));
+          cleared++;
+          y++;
+        }
+      }
+      if(cleared) {
+        tetrisLines += cleared;
+        tetrisScore += cleared*100*cleared;
+        document.getElementById('tetrisScore').textContent = tetrisScore;
+        document.getElementById('tetrisLines').textContent = tetrisLines;
+      }
+    }
+
+    function tetrisMove(dir) {
+      if(!tetrisRunning) return;
+      if(dir==='left') moveTetris(-1,0);
+      if(dir==='right') moveTetris(1,0);
+      if(dir==='rotate') rotateTetris();
+      if(dir==='down') moveTetris(0,1);
+      if(dir==='drop') while(moveTetris(0,1)) {}
+      drawTetris();
+    }
+
+    document.addEventListener('keydown', e => {
+      if(!tetrisRunning) return;
+      if(e.key==='ArrowLeft') tetrisMove('left');
+      if(e.key==='ArrowRight') tetrisMove('right');
+      if(e.key==='ArrowUp') tetrisMove('rotate');
+      if(e.key==='ArrowDown') tetrisMove('down');
+      if(e.key===' ') tetrisMove('drop');
+    });
+
+    // FLAPPY GAME
+    const flappyCanvas = document.getElementById('flappyCanvas');
+    const flappyCtx = flappyCanvas.getContext('2d');
+    let flappyRunning = false, flappyScore = 0, flappyBest = parseInt(localStorage.getItem('flappyBest')||0);
+    let bird = {y:200, vy:0};
+    let pipes = [];
+    let flappyFrame = 0;
+    document.getElementById('flappyBest').textContent = flappyBest;
+
+    function startFlappy() {
+      flappyRunning = true;
+      flappyScore = 0;
+      bird = {y:200, vy:0};
+      pipes = [];
+      flappyFrame = 0;
+      document.getElementById('flappyScore').textContent = 0;
+      flappyLoop();
+    }
+
+    function flappyLoop() {
+      if(!flappyRunning) return;
+      
+      flappyCtx.fillStyle = '#87CEEB';
+      flappyCtx.fillRect(0,0,400,600);
+      
+      bird.vy += 0.5;
+      bird.y += bird.vy;
+      
+      if(bird.y > 570 || bird.y < 0) {
+        flappyRunning = false;
+        if(flappyScore > flappyBest) {
+          flappyBest = flappyScore;
+          localStorage.setItem('flappyBest', flappyBest);
+          document.getElementById('flappyBest').textContent = flappyBest;
+        }
+        alert('Game Over! Score: '+flappyScore);
+        return;
+      }
+      
+      flappyCtx.fillStyle = '#FFD700';
+      flappyCtx.beginPath();
+      flappyCtx.arc(80, bird.y, 20, 0, Math.PI*2);
+      flappyCtx.fill();
+      
+      if(flappyFrame % 90 === 0) {
+        pipes.push({x:400, gap:150+Math.random()*100, y:100+Math.random()*200});
+      }
+      
+      pipes.forEach((p, i) => {
+        p.x -= 3;
+        
+        flappyCtx.fillStyle = '#4ADE80';
+        flappyCtx.fillRect(p.x, 0, 60, p.y);
+        flappyCtx.fillRect(p.x, p.y+p.gap, 60, 600);
+        
+        if(p.x+60 < 80 && !p.scored) {
+          flappyScore++;
+          p.scored = true;
+          document.getElementById('flappyScore').textContent = flappyScore;
+        }
+        
+        if((80>p.x && 80<p.x+60) && (bird.y<p.y || bird.y>p.y+p.gap)) {
+          flappyRunning = false;
+        }
+        
+        if(p.x < -60) pipes.splice(i,1);
+      });
+      
+      flappyFrame++;
+      requestAnimationFrame(flappyLoop);
+    }
+
+    function flappyJump() {
+      if(flappyRunning) bird.vy = -10;
+    }
+
+    flappyCanvas.addEventListener('click', flappyJump);
+    flappyCanvas.addEventListener('touchstart', e => {
+      e.preventDefault();
+      flappyJump();
+    });
+    document.addEventListener('keydown', e => {
+      if(e.key===' ' && flappyRunning) flappyJump();
+    });
+
+    // SCREAM GAME (Voice Control!)
+    const screamCanvas = document.getElementById('screamCanvas');
+    const screamCtx = screamCanvas.getContext('2d');
+    let screamRunning = false, screamScore = 0, screamBest = parseInt(localStorage.getItem('screamBest')||0);
+    let player = {x:50, y:300, vy:0};
+    let obstacles = [];
+    let audioContext, analyser, microphone, dataArray;
+    let screamFrame = 0;
+    document.getElementById('screamBest').textContent = screamBest;
+
+    async function startScream() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({audio:true});
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        analyser = audioContext.createAnalyser();
+        microphone = audioContext.createMediaStreamSource(stream);
+        microphone.connect(analyser);
+        analyser.fftSize = 256;
+        dataArray = new Uint8Array(analyser.frequencyBinCount);
+        
+        screamRunning = true;
+        screamScore = 0;
+        player = {x:50, y:300, vy:0};
+        obstacles = [];
+        screamFrame = 0;
+        document.getElementById('screamScore').textContent = 0;
+        screamLoop();
+      } catch(e) {
+        alert('Microphone access required! Please allow microphone access.');
+      }
+    }
+
+    function stopScream() {
+      screamRunning = false;
+      if(audioContext) audioContext.close();
+    }
+
+    function screamLoop() {
+      if(!screamRunning) return;
+      
+      analyser.getByteFrequencyData(dataArray);
+      const volume = dataArray.reduce((a,b)=>a+b,0) / dataArray.length;
+      
+      document.getElementById('micWave').style.height = (volume/255*100)+'%';
+      
+      if(volume > 50) {
+        player.vy = -15 * (volume/255);
+      } else {
+        player.vy += 1;
+      }
+      
+      player.y += player.vy;
+      
+      if(player.y > 370 || player.y < 0) {
+        screamRunning = false;
+        if(screamScore > screamBest) {
+          screamBest = screamScore;
+          localStorage.setItem('screamBest', screamBest);
+          document.getElementById('screamBest').textContent = screamBest;
+        }
+        stopScream();
+        alert('Game Over! Score: '+screamScore);
+        return;
+      }
+      
+      screamCtx.fillStyle = '#87CEEB';
+      screamCtx.fillRect(0,0,400,400);
+      
+      screamCtx.fillStyle = '#8B4513';
+      screamCtx.fillRect(0,370,400,30);
+      
+      screamCtx.fillStyle = '#FFD700';
+      screamCtx.beginPath();
+      screamCtx.arc(player.x, player.y, 20, 0, Math.PI*2);
+      screamCtx.fill();
+      
+      if(screamFrame % 60 === 0) {
+        obstacles.push({x:400, h:50+Math.random()*100});
+      }
+      
+      obstacles.forEach((o, i) => {
+        o.x -= 5;
+        
+        screamCtx.fillStyle = '#FF6B9D';
+        screamCtx.fillRect(o.x, 370-o.h, 40, o.h);
+        
+        if(o.x+40 < player.x && !o.scored) {
+          screamScore++;
+          o.scored = true;
+          document.getElementById('screamScore').textContent = screamScore;
+        }
+        
+        if((player.x+20>o.x && player.x-20<o.x+40) && player.y+20>370-o.h) {
+          screamRunning = false;
+        }
+        
+        if(o.x < -40) obstacles.splice(i,1);
+      });
+      
+      screamCtx.fillStyle = '#000';
+      screamCtx.font = '14px monospace';
+      screamCtx.fillText('Volume: '+Math.round(volume), 10, 20);
+      
+      screamFrame++;
+      requestAnimationFrame(screamLoop);
+    }
+
+    // Translations
+    const translations = {
+      en: {subtitle:'Where meme culture meets transparent blockchain — Play games, have fun, join the community! 🚀',buyBtn:'Buy on PancakeSwap',viewBtn:'View on BscScan',copyBtn:'Copy Contract'},
+      it: {subtitle:'Dove la cultura meme incontra la blockchain trasparente — Gioca, divertiti e unisciti alla community! 🚀',buyBtn:'Compra su PancakeSwap',viewBtn:'Vedi su BscScan',copyBtn:'Copia Contratto'},
+      fr: {subtitle:'Où la culture des mèmes rencontre la blockchain transparente — Jouez, amusez-vous et rejoignez la communauté! 🚀',buyBtn:'Acheter sur PancakeSwap',viewBtn:'Voir sur BscScan',copyBtn:'Copier le Contrat'},
+      es: {subtitle:'¡Donde la cultura de los memes se encuentra con blockchain transparente — Juega, diviértete y únete a la comunidad! 🚀',buyBtn:'Comprar en PancakeSwap',viewBtn:'Ver en BscScan',copyBtn:'Copiar Contrato'},
+      cn: {subtitle:'模因文化与透明区块链相遇 — 玩游戏，享受乐趣，加入社区！🚀',buyBtn:'在PancakeSwap购买',viewBtn:'在BscScan查看',copyBtn:'复制合约'}
     };
 
     function changeLang(lang) {
@@ -1113,295 +1351,7 @@
         const el = document.getElementById(key);
         if(el) el.textContent = t[key];
       });
-      playSound('click');
     }
-
-    // TETRIS GAME
-    const canvas = document.getElementById('tetrisCanvas');
-    const ctx = canvas.getContext('2d');
-    const COLS = 10;
-    const ROWS = 20;
-    const BLOCK_SIZE = 30;
-    const COLORS = ['#00D9FF','#FFD700','#FF6B9D','#4ADE80','#F97316','#A78BFA','#FB923C'];
-    const SHAPES = [
-      [[1,1,1,1]],
-      [[1,1],[1,1]],
-      [[0,1,0],[1,1,1]],
-      [[1,0,0],[1,1,1]],
-      [[0,0,1],[1,1,1]],
-      [[0,1,1],[1,1,0]],
-      [[1,1,0],[0,1,1]]
-    ];
-    
-    let board = [];
-    let score = 0;
-    let lines = 0;
-    let level = 1;
-    let gameRunning = false;
-    let gamePaused = false;
-    let gameInterval = null;
-    let currentPiece = null;
-    let dropCounter = 0;
-    let dropInterval = 1000;
-    let lastTime = 0;
-    let bestScore = parseInt(localStorage.getItem('tetrisBest')) || 0;
-    
-    function openGame() {
-      document.getElementById('gameModal').classList.add('active');
-      playSound('click');
-      if(!canvas.getContext) return;
-      initBoard();
-      draw();
-    }
-    
-    function closeGame() {
-      document.getElementById('gameModal').classList.remove('active');
-      gameRunning = false;
-      gamePaused = false;
-      if(gameInterval) clearInterval(gameInterval);
-      playSound('click');
-    }
-    
-    function initBoard() {
-      board = Array(ROWS).fill(null).map(() => Array(COLS).fill(0));
-      score = 0;
-      lines = 0;
-      level = 1;
-      updateScore();
-    }
-    
-    function startGame() {
-      if(gameRunning) return;
-      gameRunning = true;
-      gamePaused = false;
-      initBoard();
-      spawnPiece();
-      dropInterval = 1000;
-      lastTime = performance.now();
-      gameLoop();
-      playSound('click');
-    }
-    
-    function pauseGame() {
-      gamePaused = !gamePaused;
-      document.getElementById('pauseBtn').textContent = gamePaused ? 'RESUME' : 'PAUSE';
-      playSound('click');
-    }
-    
-    function spawnPiece() {
-      const shapeIndex = Math.floor(Math.random() * SHAPES.length);
-      currentPiece = {
-        shape: SHAPES[shapeIndex],
-        color: COLORS[shapeIndex],
-        x: Math.floor(COLS / 2) - 1,
-        y: 0
-      };
-    }
-    
-    function draw() {
-      ctx.fillStyle = '#000';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      
-      for(let y=0; y<ROWS; y++) {
-        for(let x=0; x<COLS; x++) {
-          if(board[y][x]) {
-            ctx.fillStyle = board[y][x];
-            ctx.fillRect(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE-1, BLOCK_SIZE-1);
-          }
-        }
-      }
-      
-      if(currentPiece) {
-        ctx.fillStyle = currentPiece.color;
-        currentPiece.shape.forEach((row, dy) => {
-          row.forEach((value, dx) => {
-            if(value) {
-              ctx.fillRect(
-                (currentPiece.x + dx) * BLOCK_SIZE,
-                (currentPiece.y + dy) * BLOCK_SIZE,
-                BLOCK_SIZE-1,
-                BLOCK_SIZE-1
-              );
-            }
-          });
-        });
-      }
-      
-      ctx.strokeStyle = '#222';
-      for(let i=0; i<=COLS; i++) {
-        ctx.beginPath();
-        ctx.moveTo(i * BLOCK_SIZE, 0);
-        ctx.lineTo(i * BLOCK_SIZE, canvas.height);
-        ctx.stroke();
-      }
-      for(let i=0; i<=ROWS; i++) {
-        ctx.beginPath();
-        ctx.moveTo(0, i * BLOCK_SIZE);
-        ctx.lineTo(canvas.width, i * BLOCK_SIZE);
-        ctx.stroke();
-      }
-    }
-    
-    function gameLoop(time = 0) {
-      if(!gameRunning) return;
-      
-      const deltaTime = time - lastTime;
-      lastTime = time;
-      
-      if(!gamePaused) {
-        dropCounter += deltaTime;
-        if(dropCounter > dropInterval) {
-          if(!movePiece(0, 1)) {
-            lockPiece();
-            clearLines();
-            spawnPiece();
-            if(checkCollision(0, 0)) {
-              gameRunning = false;
-              if(score > bestScore) {
-                bestScore = score;
-                localStorage.setItem('tetrisBest', bestScore);
-              }
-              alert('🎮 Game Over! Score: ' + score + '\n🏆 Best: ' + bestScore);
-              return;
-            }
-          }
-          dropCounter = 0;
-        }
-        draw();
-      }
-      
-      requestAnimationFrame(gameLoop);
-    }
-    
-    function movePiece(dx, dy) {
-      currentPiece.x += dx;
-      currentPiece.y += dy;
-      if(checkCollision(0, 0)) {
-        currentPiece.x -= dx;
-        currentPiece.y -= dy;
-        return false;
-      }
-      if(dx !== 0 || dy !== 0) playSound('move');
-      return true;
-    }
-    
-    function rotatePiece() {
-      const rotated = currentPiece.shape[0].map((_, i) =>
-        currentPiece.shape.map(row => row[i]).reverse()
-      );
-      const prev = currentPiece.shape;
-      currentPiece.shape = rotated;
-      if(checkCollision(0, 0)) {
-        currentPiece.shape = prev;
-      } else {
-        playSound('rotate');
-      }
-    }
-    
-    function checkCollision(dx, dy) {
-      return currentPiece.shape.some((row, y) =>
-        row.some((value, x) => {
-          if(!value) return false;
-          const newX = currentPiece.x + x + dx;
-          const newY = currentPiece.y + y + dy;
-          return newX < 0 || newX >= COLS || newY >= ROWS ||
-                 (newY >= 0 && board[newY][newX]);
-        })
-      );
-    }
-    
-    function lockPiece() {
-      currentPiece.shape.forEach((row, y) => {
-        row.forEach((value, x) => {
-          if(value) {
-            const boardY = currentPiece.y + y;
-            const boardX = currentPiece.x + x;
-            if(boardY >= 0 && boardY < ROWS && boardX >= 0 && boardX < COLS) {
-              board[boardY][boardX] = currentPiece.color;
-            }
-          }
-        });
-      });
-      playSound('drop');
-    }
-    
-    function clearLines() {
-      let linesCleared = 0;
-      for(let y = ROWS - 1; y >= 0; y--) {
-        if(board[y].every(cell => cell !== 0)) {
-          board.splice(y, 1);
-          board.unshift(Array(COLS).fill(0));
-          linesCleared++;
-          y++;
-        }
-      }
-      if(linesCleared > 0) {
-        lines += linesCleared;
-        score += linesCleared * 100 * linesCleared;
-        level = Math.floor(lines / 10) + 1;
-        dropInterval = Math.max(100, 1000 - (level - 1) * 100);
-        updateScore();
-        playSound('line');
-      }
-    }
-    
-    function updateScore() {
-      document.getElementById('score').textContent = score;
-      document.getElementById('lines').textContent = lines;
-      document.getElementById('level').textContent = level;
-    }
-    
-    // Mobile controls handler
-    function mobileControl(action) {
-      if(!gameRunning || gamePaused) return;
-      
-      switch(action) {
-        case 'left':
-          movePiece(-1, 0);
-          break;
-        case 'right':
-          movePiece(1, 0);
-          break;
-        case 'rotate':
-          rotatePiece();
-          break;
-        case 'down':
-          movePiece(0, 1);
-          break;
-        case 'drop':
-          while(movePiece(0, 1)) {}
-          break;
-      }
-      draw();
-    }
-    
-    document.addEventListener('keydown', (e) => {
-      if(!gameRunning || gamePaused) return;
-      
-      if(e.key === 'ArrowLeft') {
-        movePiece(-1, 0);
-        draw();
-      }
-      if(e.key === 'ArrowRight') {
-        movePiece(1, 0);
-        draw();
-      }
-      if(e.key === 'ArrowDown') {
-        movePiece(0, 1);
-        draw();
-      }
-      if(e.key === 'ArrowUp') {
-        rotatePiece();
-        draw();
-      }
-      if(e.key === ' ') {
-        while(movePiece(0, 1)) {}
-        draw();
-      }
-      if(e.key === 'p' || e.key === 'P') {
-        pauseGame();
-      }
-    });
   </script>
 </body>
 </html>
