@@ -1,0 +1,71 @@
+{
+  "name": "4evermeme",
+  "version": "1.0.0",
+  "description": "4EverMeme (4EVM) - A community-driven BEP-20 token on BNB Smart Chain",
+  "main": "index.js",
+  "scripts": {
+    "test": "hardhat test",
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy.js --network bsc",
+    "deploy:testnet": "hardhat run scripts/deploy.js --network bscTestnet",
+    "verify": "hardhat verify --network bsc",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "clean": "hardhat clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nedja80/4EverMeme.git"
+  },
+  "keywords": [
+    "4EverMeme",
+    "4EVM",
+    "BEP20",
+    "BEP-20",
+    "BSC",
+    "BNB",
+    "Binance Smart Chain",
+    "meme",
+    "token",
+    "cryptocurrency",
+    "blockchain",
+    "DeFi",
+    "Web3"
+  ],
+  "author": "4EverMeme Community",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nedja80/4EverMeme/issues"
+  },
+  "homepage": "https://github.com/nedja80/4EverMeme#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
+    "@nomicfoundation/hardhat-ethers": "^3.0.0",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.0",
+    "@typechain/ethers-v6": "^0.5.0",
+    "@typechain/hardhat": "^9.0.0",
+    "@types/chai": "^4.2.0",
+    "@types/mocha": ">=9.1.0",
+    "chai": "^4.2.0",
+    "eslint": "^8.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "ethers": "^6.4.0",
+    "hardhat": "^2.19.0",
+    "hardhat-gas-reporter": "^1.0.8",
+    "prettier": "^3.0.0",
+    "prettier-plugin-solidity": "^1.1.0",
+    "solidity-coverage": "^0.8.0",
+    "typechain": "^8.3.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}
