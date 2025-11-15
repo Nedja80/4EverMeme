@@ -1,683 +1,1025 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-  <title>4EverMeme (4EVM) • Official Site</title>
-
-  <!-- SEO / Social -->
-  <meta
-    name="description"
-    content="4EverMeme (4EVM) is a BEP-20 meme token on BNB Smart Chain focused on community-driven entertainment and transparency."
-  />
-  <meta property="og:title" content="4EverMeme (4EVM)" />
-  <meta
-    property="og:description"
-    content="4EverMeme (4EVM) is a BEP-20 meme token on BNB Smart Chain. Join the community!"
-  />
-  <meta
-    property="og:image"
-    content="https://raw.githubusercontent.com/nedja80/4EverMeme/main/logo.png"
-  />
-  <meta property="og:type" content="website" />
-  <meta
-    property="og:url"
-    content="https://nedja80.github.io/4EverMeme/"
-  />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4EverMeme (4EVM) 🚀 To The Moon!</title>
+  <meta name="description" content="4EverMeme - The ultimate community meme token on BSC with games, stats, and more!">
   <style>
-    :root {
-      --accent: #4ade80;
-      --accent-soft: rgba(74, 222, 128, 0.2);
-      --bg-dark: #020312;
-      --bg-card: rgba(7, 10, 26, 0.9);
-      --text-main: #f9fafb;
-      --text-muted: #9ca3af;
-      --border-subtle: rgba(148, 163, 184, 0.2);
-      --radius-lg: 24px;
-      --radius-md: 16px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Segoe UI", sans-serif;
-      color: var(--text-main);
-      /* cielo stellato */
-      background-color: var(--bg-dark);
-      background-image:
-        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.16) 0, transparent 12px),
-        radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.1) 0, transparent 10px),
-        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.08) 0, transparent 10px),
-        radial-gradient(circle at 90% 70%, rgba(255, 255, 255, 0.12) 0, transparent 12px),
-        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0, transparent 150px);
-      background-repeat: repeat;
-      background-size: 400px 400px, 350px 350px, 300px 300px, 450px 450px, cover;
-      background-attachment: fixed;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 32px 16px;
-    }
-
-    .page {
-      width: 100%;
-      max-width: 1080px;
-    }
-
-    .glass-shell {
-      width: 100%;
-      border-radius: var(--radius-lg);
-      padding: 24px;
-      background: linear-gradient(
-          135deg,
-          rgba(148, 163, 184, 0.12),
-          transparent 55%,
-          rgba(74, 222, 128, 0.12)
-        ),
-        rgba(15, 23, 42, 0.9);
-      box-shadow:
-        0 24px 80px rgba(15, 23, 42, 0.9),
-        0 0 0 1px rgba(148, 163, 184, 0.28);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(148, 163, 184, 0.45);
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .brand-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #bbf7d0, #22c55e);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow:
-        0 0 0 2px rgba(22, 163, 74, 0.8),
-        0 10px 30px rgba(22, 163, 74, 0.7);
-    }
-
-    .brand-title {
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    .lang-switch select {
-      background: rgba(15, 23, 42, 0.9);
-      color: var(--text-main);
-      border-radius: 999px;
-      border: 1px solid var(--border-subtle);
-      padding: 6px 14px;
-      font-size: 13px;
-      cursor: pointer;
-    }
-.hero-card {
-  background: rgba(20, 20, 25, 0.75);
-  backdrop-filter: blur(12px);
-  border-radius: 24px;
-  padding: 32px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75);
-}
-
-.card {
-  background: rgba(20, 20, 25, 0.60);
-  backdrop-filter: blur(10px);
-  border-radius: 18px;
-  padding: 24px;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55); 
-}    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     
-
-    .chain-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      color: var(--text-muted);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      margin-bottom: 10px;
+    :root {
+      --primary: #FFD700;
+      --accent: #00D9FF;
+      --bg: #0a0e27;
+      --text: #fff;
+      --muted: #94a3b8;
     }
-
-    .hero h1 {
-      font-size: clamp(32px, 4vw, 40px);
-      margin-bottom: 4px;
+    
+    [data-theme="light"] {
+      --bg: #f0f4f8;
+      --text: #1e293b;
+      --muted: #475569;
     }
-
-    .hero-subtitle {
-      font-size: 14px;
-      color: var(--text-muted);
-      max-width: 560px;
-      margin: 0 auto 22px;
+    
+    body {
+      font-family: system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      transition: all 0.3s;
     }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 8px;
+    
+    /* Announcement */
+    .banner {
+      background: linear-gradient(90deg, #FFD700, #FFA500, #00D9FF);
+      color: #000;
+      text-align: center;
+      padding: 12px;
+      font-weight: 600;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-
-    .btn {
-      border-radius: 999px;
-      border: 1px solid transparent;
-      padding: 10px 18px;
-      font-size: 14px;
-      font-weight: 500;
+    
+    .banner button {
+      position: absolute;
+      right: 20px;
+      background: rgba(0,0,0,0.2);
+      border: none;
+      color: #000;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
       cursor: pointer;
+    }
+    
+    /* Stars */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 3s infinite;
+    }
+    
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+    
+    .shooting-star {
+      position: absolute;
+      width: 100px;
+      height: 2px;
+      background: linear-gradient(90deg, #fff, transparent);
+      animation: shoot 3s linear;
+    }
+    
+    @keyframes shoot {
+      from { transform: translate(0, 0); opacity: 1; }
+      to { transform: translate(-300px, 300px); opacity: 0; }
+    }
+    
+    /* Content */
+    .content {
+      position: relative;
+      z-index: 1;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    /* Nav */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      margin-bottom: 40px;
+    }
+    
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      animation: float 3s ease-in-out infinite;
+      cursor: pointer;
+      filter: drop-shadow(0 0 20px rgba(255,215,0,0.6));
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .brand h1 {
+      font-size: 24px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .nav-controls {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .theme-btn, .game-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+    
+    .theme-btn:hover, .game-btn:hover {
+      transform: scale(1.1) rotate(10deg);
+      background: rgba(255,255,255,0.1);
+    }
+    
+    select {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 25px;
+      padding: 8px 20px;
+      color: var(--text);
+      cursor: pointer;
+    }
+    
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    
+    .badge {
+      display: inline-flex;
+      gap: 8px;
+      background: rgba(0,217,255,0.15);
+      border: 1px solid var(--accent);
+      border-radius: 50px;
+      padding: 8px 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 30px;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 10px rgba(0,217,255,0.3); }
+      50% { box-shadow: 0 0 25px rgba(0,217,255,0.6); }
+    }
+    
+    h2 {
+      font-size: clamp(48px, 8vw, 96px);
+      font-weight: 900;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #FFD700, #FFA500, #00D9FF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradient 3s ease infinite;
+      background-size: 200%;
+    }
+    
+    @keyframes gradient {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    
+    .subtitle {
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+    
+    /* Stats */
+    .live-stats {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+    
+    .stat {
+      text-align: center;
+    }
+    
+    .stat-value {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--primary);
+    }
+    
+    .stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    
+    /* Buttons */
+    .btns {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    
+    .btn {
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      text-decoration: none;
-      transition: all 0.18s ease-out;
+      gap: 10px;
     }
-
+    
     .btn-primary {
-      background: linear-gradient(135deg, #22c55e, #4ade80);
-      color: #022c22;
-      box-shadow:
-        0 12px 35px rgba(22, 163, 74, 0.7),
-        0 0 0 1px rgba(22, 101, 52, 0.6);
+      background: linear-gradient(135deg, #FFD700, #FFA500);
+      color: #000;
+      box-shadow: 0 10px 40px rgba(255,215,0,0.4);
     }
-
+    
     .btn-primary:hover {
-      transform: translateY(-1px) scale(1.01);
-      box-shadow:
-        0 18px 45px rgba(22, 163, 74, 0.9),
-        0 0 0 1px rgba(22, 101, 52, 0.9);
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 15px 50px rgba(255,215,0,0.6);
     }
-
+    
     .btn-secondary {
-      background: rgba(15, 23, 42, 0.9);
-      border-color: var(--border-subtle);
-      color: var(--text-main);
+      background: rgba(255,255,255,0.05);
+      border: 2px solid rgba(255,255,255,0.2);
+      color: var(--text);
     }
-
+    
     .btn-secondary:hover {
-      background: rgba(15, 23, 42, 1);
-      border-color: rgba(148, 163, 184, 0.8);
+      background: rgba(255,255,255,0.1);
+      border-color: var(--accent);
     }
-
-    .contract-line {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-        "Liberation Mono", "Courier New", monospace;
+    
+    /* Contract */
+    .contract {
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
+      background: rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,215,0,0.3);
+      border-radius: 15px;
+      padding: 15px 25px;
+      margin: 20px 0;
+    }
+    
+    .contract code {
+      font-family: monospace;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    
+    .verified {
+      background: rgba(0,217,255,0.2);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 4px 12px;
+      border-radius: 20px;
       font-size: 11px;
-      color: var(--text-muted);
-      margin-top: 4px;
+      font-weight: 700;
     }
-
+    
+    /* Social */
+    .social {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 30px 0;
+    }
+    
+    .social a {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    
+    .social a:hover {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      transform: translateY(-5px) scale(1.1);
+    }
+    
+    /* Chart */
+    .chart {
+      margin: 60px 0;
+      text-align: center;
+    }
+    
+    .chart h3 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .chart-box {
+      background: rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 25px;
+      padding: 20px;
+      height: 500px;
+    }
+    
+    .chart-box iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 15px;
+    }
+    
+    /* Grid */
     .grid {
       display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
-      gap: 16px;
-      margin-top: 20px;
-      margin-bottom: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin: 60px 0;
     }
-
+    
     .card {
-    background: rgba(20,20,25,0.85);
-    padding: 24px;
-    border-radius: 18px;
-    box-shadow: 0 18px 45px rgba(0,0,0,0.6);
-}        0 14px 35px rgba(15, 23, 42, 0.9),
-        0 0 0 1px rgba(15, 23, 42, 0.6);
-      backdrop-filter: blur(18px);
+      background: rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 25px;
+      padding: 30px;
+      transition: all 0.3s;
     }
-
-    .card h2 {
-      font-size: 15px;
-      margin-bottom: 6px;
+    
+    .card:hover {
+      border-color: rgba(255,215,0,0.4);
+      transform: translateY(-5px);
     }
-
-    .divider {
-      height: 1px;
-      background: radial-gradient(
-        ellipse at left,
-        rgba(148, 163, 184, 0.65),
-        transparent 65%
-      );
-      margin: 4px 0 10px;
-    }
-
-    .text-muted {
-      color: var(--text-muted);
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    ul {
-      list-style: none;
-      margin-top: 10px;
-    }
-
-    ul li {
+    
+    .card h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
       display: flex;
-      align-items: flex-start;
-      gap: 6px;
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 4px;
+      align-items: center;
+      gap: 10px;
     }
-
-    ul li::before {
-      content: "•";
-      color: var(--accent);
-      font-weight: 700;
-      margin-top: -1px;
+    
+    .divider {
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), transparent);
+      margin: 15px 0;
     }
-
-    .token-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 13px;
-      margin-top: 4px;
+    
+    .card p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 20px;
     }
-
-    .token-table th,
-    .token-table td {
-      padding: 4px 0;
-      border-bottom: 1px dashed rgba(55, 65, 81, 0.9);
-    }
-
-    .token-table th {
-      text-align: left;
-      color: var(--text-muted);
-      font-weight: 500;
-      padding-right: 12px;
-      width: 42%;
-    }
-
-    .token-table td {
-      text-align: right;
-      color: var(--text-main);
-      font-feature-settings: "tnum" 1, "lnum" 1;
-    }
-
-    .how-to-buy {
-      margin-top: 8px;
-      padding-top: 8px;
-      border-top: 1px dashed rgba(55, 65, 81, 0.9);
-    }
-
-    .how-to-buy h2 {
-      font-size: 15px;
-      margin-bottom: 6px;
-    }
-
-    .steps {
+    
+    .card ul {
       list-style: none;
-      margin-top: 6px;
     }
-
-    .steps li {
+    
+    .card li {
+      padding: 10px 0 10px 25px;
       position: relative;
-      padding-left: 20px;
-      margin-bottom: 6px;
-      font-size: 13px;
-      color: var(--text-muted);
+      color: var(--muted);
     }
-
-    .steps li::before {
-      content: "✓";
+    
+    .card li::before {
+      content: '🚀';
       position: absolute;
       left: 0;
-      top: 0;
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 700;
     }
-
-    footer {
-      margin-top: 12px;
-      font-size: 11px;
-      color: var(--text-muted);
+    
+    /* Newsletter */
+    .newsletter {
+      background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(0,217,255,0.1));
+      border: 1px solid rgba(255,215,0,0.3);
+      border-radius: 25px;
+      padding: 40px;
+      text-align: center;
+      margin: 60px 0;
+    }
+    
+    .newsletter h3 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    
+    .newsletter p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    
+    .newsletter-form {
       display: flex;
-      justify-content: space-between;
       gap: 10px;
-      flex-wrap: wrap;
-      border-top: 1px dashed rgba(55, 65, 81, 0.9);
-      padding-top: 8px;
+      max-width: 500px;
+      margin: 0 auto;
     }
-
-    footer a {
+    
+    .newsletter input {
+      flex: 1;
+      padding: 14px 20px;
+      border-radius: 25px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(0,0,0,0.3);
+      color: var(--text);
+      font-size: 14px;
+    }
+    
+    .newsletter button {
+      padding: 14px 30px;
+      border-radius: 25px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border: none;
+      color: #000;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    
+    /* Theme Customizer */
+    .customizer {
+      position: fixed;
+      right: -300px;
+      top: 100px;
+      width: 280px;
+      background: rgba(0,0,0,0.95);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 15px 0 0 15px;
+      padding: 20px;
+      transition: right 0.3s;
+      z-index: 999;
+    }
+    
+    .customizer.open {
+      right: 0;
+    }
+    
+    .customizer-toggle {
+      position: absolute;
+      left: -40px;
+      top: 20px;
+      width: 40px;
+      height: 40px;
+      background: rgba(0,0,0,0.95);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px 0 0 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 20px;
+    }
+    
+    .color-picker {
+      margin: 15px 0;
+    }
+    
+    .color-picker label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    
+    .color-picker input {
+      width: 100%;
+      height: 40px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    
+    /* Game Modal */
+    .game-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .game-modal.active {
+      display: flex;
+    }
+    
+    .game-box {
+      background: rgba(10,14,39,0.95);
+      border: 2px solid var(--primary);
+      border-radius: 25px;
+      padding: 30px;
+      text-align: center;
+      max-width: 600px;
+      width: 90%;
+    }
+    
+    .game-box h3 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    
+    #gameCanvas {
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 15px;
+      background: #000;
+      margin: 20px 0;
+    }
+    
+    .game-controls {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+    
+    .game-score {
+      font-size: 24px;
+      color: var(--primary);
+      margin: 10px 0;
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 60px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    footer p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .footer-links a {
       color: var(--accent);
       text-decoration: none;
     }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
+    
+    /* Responsive */
     @media (max-width: 768px) {
-      body {
-        padding: 16px 8px;
-      }
-
-      .glass-shell {
-        padding: 16px;
-      }
-
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      footer {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+      h2 { font-size: 48px; }
+      .grid { grid-template-columns: 1fr; }
+      .newsletter-form { flex-direction: column; }
+      .chart-box { height: 400px; }
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <div class="glass-shell">
-      <header>
+  <!-- Banner -->
+  <div class="banner" id="banner">
+    🚀 <strong>NEW!</strong> Play Moon Lander game • Customize colors • Join newsletter! 
+    <button onclick="document.getElementById('banner').style.display='none'">×</button>
+  </div>
+
+  <!-- Stars -->
+  <div class="stars" id="stars"></div>
+
+  <!-- Content -->
+  <div class="content">
+    <!-- Nav -->
+    <nav>
+      <div class="logo-section">
+        <img src="https://i.postimg.cc/5y0H78jp/09DF90F9-3A8B-49B3-8A87-C2FFFF78C819.png" class="logo" id="logo" onclick="playSound('click')">
         <div class="brand">
-          <div class="brand-icon"></div>
-          <div>
-            <div class="brand-title">4EverMeme</div>
-            <div style="font-size: 11px; color: var(--text-muted)">
-              BNB Smart Chain • BEP-20
-            </div>
+          <h1>4EVERMEME</h1>
+          <p>To The Moon!</p>
+        </div>
+      </div>
+      <div class="nav-controls">
+        <button class="game-btn" onclick="openGame()" title="Play Game">🎮</button>
+        <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">🌙</button>
+        <select id="lang" onchange="changeLang(this.value)">
+          <option value="en">🇬🇧 EN</option>
+          <option value="it">🇮🇹 IT</option>
+        </select>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="badge">⛓️ BNB SMART CHAIN • BEP-20</div>
+      <h2 id="title">4EVERMEME (4EVM)</h2>
+      <p class="subtitle" id="subtitle">
+        Where meme culture meets transparent blockchain — built for creativity, fun, and community! 🚀
+      </p>
+
+      <!-- Live Stats -->
+      <div class="live-stats">
+        <div class="stat">
+          <div class="stat-value">1B</div>
+          <div class="stat-label">Supply</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">100%</div>
+          <div class="stat-label">Community</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">0%</div>
+          <div class="stat-label">Tax</div>
+        </div>
+      </div>
+
+      <div class="btns">
+        <a href="https://pancakeswap.finance/swap?outputCurrency=0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef&chain=bsc" class="btn btn-primary" onclick="playSound('click')">
+          🥞 <span id="buyBtn">Buy on PancakeSwap</span>
+        </a>
+        <a href="https://bscscan.com/token/0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef" class="btn btn-secondary" onclick="playSound('click')">
+          🔍 <span id="viewBtn">View on BscScan</span>
+        </a>
+        <button class="btn btn-secondary" onclick="copyContract()">
+          📋 <span id="copyBtn">Copy Contract</span>
+        </button>
+      </div>
+
+      <div class="contract">
+        <span>📄</span>
+        <code>0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef</code>
+        <span class="verified">✓ Verified</span>
+      </div>
+
+      <div class="social">
+        <a href="https://t.me/4evermeme" onclick="playSound('click')">📱</a>
+        <a href="https://x.com/4evermeme" onclick="playSound('click')">🐦</a>
+        <a href="https://github.com/nedja80/4EverMeme" onclick="playSound('click')">💻</a>
+      </div>
+    </section>
+
+    <!-- Chart -->
+    <section class="chart">
+      <h3>📈 Live Chart</h3>
+      <div class="chart-box">
+        <iframe src="https://dexscreener.com/bsc/0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef?embed=1&theme=dark"></iframe>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+      <h3>📧 Stay Updated!</h3>
+      <p>Join our newsletter for exclusive updates and giveaways</p>
+      <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+        <input type="email" placeholder="Enter your email" required id="emailInput">
+        <button type="submit" id="subscribeBtn">Subscribe</button>
+      </form>
+    </section>
+
+    <!-- Grid -->
+    <div class="grid">
+      <div class="card">
+        <h3>📖 <span id="aboutTitle">About</span></h3>
+        <div class="divider"></div>
+        <p id="aboutText">4EverMeme (4EVM) is a community-driven BEP-20 token on BNB Smart Chain focused on transparency and fun!</p>
+        <ul>
+          <li>No buy/sell tax - 100% community owned</li>
+          <li>Verified smart contract on BscScan</li>
+          <li>Liquidity pair: WBNB / 4EVM</li>
+          <li>Open-source docs on GitHub</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>🎮 <span id="gameTitle">Play & Earn</span></h3>
+        <div class="divider"></div>
+        <p id="gameText">Play our Moon Lander game! Land safely to earn points and compete on the leaderboard!</p>
+        <button class="btn btn-primary" onclick="openGame()" style="width: 100%;">
+          🚀 Play Moon Lander
+        </button>
+        <div style="margin-top: 20px;">
+          <div style="font-size: 12px; color: var(--muted); margin-bottom: 10px;">🏆 Top Scores:</div>
+          <div id="leaderboard" style="font-size: 14px; color: var(--muted);">
+            1. Anonymous - 1000 pts<br>
+            2. Holder - 850 pts<br>
+            3. Diamond Hands - 720 pts
           </div>
         </div>
+      </div>
 
-        <div class="lang-switch">
-          <select id="langSelect" aria-label="Language">
-            <option value="en">English</option>
-            <option value="it">Italiano</option>
-          </select>
-        </div>
-      </header>
+      <div class="card">
+        <h3>📊 Token Info</h3>
+        <div class="divider"></div>
+        <table style="width:100%">
+          <tr><td style="color:var(--muted);padding:10px 0">Name</td><td style="text-align:right;font-weight:600;color:var(--primary)">4EverMeme</td></tr>
+          <tr><td style="color:var(--muted);padding:10px 0">Symbol</td><td style="text-align:right;font-weight:600;color:var(--primary)">4EVM</td></tr>
+          <tr><td style="color:var(--muted);padding:10px 0">Decimals</td><td style="text-align:right;font-weight:600;color:var(--primary)">18</td></tr>
+          <tr><td style="color:var(--muted);padding:10px 0">Supply</td><td style="text-align:right;font-weight:600;color:var(--primary)">1,000,000,000</td></tr>
+        </table>
+      </div>
 
-      <main>
-        <section class="hero">
-          <div class="chain-pill" data-i18n="chainBadge">
-            BNB Smart Chain • BEP-20
-          </div>
-          <h1>4EverMeme (4EVM)</h1>
-          <p class="hero-subtitle" data-i18n="subtitle">
-            Where meme culture meets transparent blockchain — built for
-            creativity, fun, and community.
-          </p>
+      <div class="card">
+        <h3>🛒 How to Buy</h3>
+        <div class="divider"></div>
+        <ul>
+          <li>Connect wallet to BSC</li>
+          <li>Go to PancakeSwap</li>
+          <li>Paste contract address</li>
+          <li>Swap BNB for 4EVM! 💎</li>
+        </ul>
+      </div>
+    </div>
 
-          <div class="hero-actions">
-            <a
-              id="buyBtn"
-              class="btn btn-primary"
-              href="https://pancakeswap.finance/swap?outputCurrency=0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef&chain=bsc"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-i18n="buyButton"
-            >
-              Buy on PancakeSwap
-            </a>
-            <a
-              id="bscScanBtn"
-              class="btn btn-secondary"
-              href="https://bscscan.com/token/0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-i18n="bscscanButton"
-            >
-              View on BscScan
-            </a>
-            <button
-              id="copyBtn"
-              type="button"
-              class="btn btn-secondary"
-              data-i18n="copyButton"
-            >
-              Copy Contract
-            </button>
-          </div>
+    <!-- Footer -->
+    <footer>
+      <p>⚠️ Community-driven project. Always DYOR!</p>
+      <div class="footer-links">
+        <a href="https://github.com/nedja80/4EverMeme">GitHub</a>
+        <span style="color:var(--muted)">•</span>
+        <a href="https://t.me/4evermeme">Telegram</a>
+        <span style="color:var(--muted)">•</span>
+        <a href="https://x.com/4evermeme">Twitter</a>
+      </div>
+      <p style="margin-top:20px;font-size:11px">© 2024 4EverMeme • Made with ❤️</p>
+    </footer>
+  </div>
 
-          <div class="contract-line">
-            0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef
-          </div>
-        </section>
+  <!-- Theme Customizer -->
+  <div class="customizer" id="customizer">
+    <div class="customizer-toggle" onclick="toggleCustomizer()">🎨</div>
+    <h3 style="margin-bottom:20px">Customize Theme</h3>
+    
+    <div class="color-picker">
+      <label>Primary Color</label>
+      <input type="color" value="#FFD700" id="primaryColor" onchange="updateColor('primary', this.value)">
+    </div>
+    
+    <div class="color-picker">
+      <label>Accent Color</label>
+      <input type="color" value="#00D9FF" id="accentColor" onchange="updateColor('accent', this.value)">
+    </div>
+    
+    <button class="btn btn-secondary" onclick="resetColors()" style="width:100%;margin-top:20px">
+      Reset Colors
+    </button>
+  </div>
 
-        <section class="grid">
-          <article class="card">
-            <h2 data-i18n="aboutTitle">About</h2>
-            <div class="divider"></div>
-            <p class="text-muted" data-i18n="aboutText">
-              4EverMeme (4EVM) is a BEP-20 token on BNB Smart Chain focused on
-              community-driven entertainment and transparency.
-            </p>
-            <ul>
-              <li data-i18n="aboutBullet1">
-                No buy/sell tax (contract verified on BscScan)
-              </li>
-              <li data-i18n="aboutBullet2">
-                Liquidity pair: WBNB / 4EVM
-              </li>
-              <li data-i18n="aboutBullet3">
-                Open-source metadata and public links
-              </li>
-            </ul>
-
-            <div class="how-to-buy">
-              <h2 data-i18n="howToBuyTitle">How to Buy</h2>
-              <ul class="steps">
-                <li data-i18n="step1">
-                  Connect your wallet to the BNB Smart Chain (BSC).
-                </li>
-                <li data-i18n="step2">
-                  Go to PancakeSwap and select the WBNB / 4EVM pair.
-                </li>
-                <li data-i18n="step3">
-                  Paste the contract address if needed and import the token.
-                </li>
-                <li data-i18n="step4">
-                  Swap BNB or WBNB for 4EVM tokens and HODL!
-                </li>
-              </ul>
-            </div>
-          </article>
-
-          <aside class="card">
-            <h2 data-i18n="tokenInfoTitle">Token Info</h2>
-            <div class="divider"></div>
-            <table class="token-table">
-              <tr>
-                <th data-i18n="tokenNameLabel">Name</th>
-                <td>4EverMeme</td>
-              </tr>
-              <tr>
-                <th data-i18n="symbolLabel">Symbol</th>
-                <td>4EVM</td>
-              </tr>
-              <tr>
-                <th data-i18n="decimalsLabel">Decimals</th>
-                <td>18</td>
-              </tr>
-              <tr>
-                <th data-i18n="supplyLabel">Total Supply</th>
-                <td>1,000,000,000</td>
-              </tr>
-              <tr>
-                <th>Contract</th>
-                <td style="font-size: 11px">
-                  0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef
-                </td>
-              </tr>
-            </table>
-          </aside>
-        </section>
-
-        <footer>
-          <div data-i18n="disclaimer">
-            This project is community-driven and experimental. Always do your
-            own research before participating.
-          </div>
-          <div>
-            <a
-              href="https://github.com/nedja80/4EverMeme"
-              target="_blank"
-              rel="noopener noreferrer"
-              >GitHub</a
-            >
-            &nbsp;•&nbsp;
-            <a
-              href="https://t.me/4evermeme"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Telegram</a
-            >
-            &nbsp;•&nbsp;
-            <a
-              href="https://x.com/4evermeme"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Twitter / X</a
-            >
-          </div>
-        </footer>
-      </main>
+  <!-- Game Modal -->
+  <div class="game-modal" id="gameModal">
+    <div class="game-box">
+      <h3>🚀 Moon Lander</h3>
+      <p style="color:var(--muted)">Use ← → arrows to move, ↑ to boost!<br>Land softly on the platform!</p>
+      <div class="game-score">Score: <span id="score">0</span></div>
+      <canvas id="gameCanvas" width="500" height="400"></canvas>
+      <div class="game-controls">
+        <button class="btn btn-primary" onclick="startGame()">Start Game</button>
+        <button class="btn btn-secondary" onclick="closeGame()">Close</button>
+      </div>
     </div>
   </div>
 
   <script>
-    const CONTRACT_ADDRESS =
-      "0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef";
-
-    // Copy contract button
-    const copyBtn = document.getElementById("copyBtn");
-    copyBtn.addEventListener("click", async () => {
+    // Sound Effects
+    const sounds = {
+      click: 'data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIF2m98OScTgwPUKXh8LdlGwU7k9n0zn0sBS+Az/LciTYIF2q98OWcTQ'
+    };
+    
+    function playSound(type) {
       try {
-        await navigator.clipboard.writeText(CONTRACT_ADDRESS);
-        const oldText = copyBtn.textContent;
-        copyBtn.textContent = "Copied!";
+        const audio = new Audio(sounds[type]);
+        audio.volume = 0.3;
+        audio.play().catch(() => {});
+      } catch(e) {}
+    }
+
+    // Stars
+    const starsEl = document.getElementById('stars');
+    for(let i=0; i<150; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.left = Math.random()*100+'%';
+      star.style.top = Math.random()*100+'%';
+      star.style.animationDelay = Math.random()*3+'s';
+      starsEl.appendChild(star);
+    }
+    
+    setInterval(() => {
+      const s = document.createElement('div');
+      s.className = 'shooting-star';
+      s.style.left = Math.random()*100+'%';
+      s.style.top = Math.random()*50+'%';
+      starsEl.appendChild(s);
+      setTimeout(() => s.remove(), 3000);
+    }, 2000);
+
+    // Theme
+    let theme = 'dark';
+    function toggleTheme() {
+      theme = theme === 'dark' ? 'light' : 'dark';
+      if(theme === 'light') {
+        document.body.setAttribute('data-theme', 'light');
+        document.getElementById('themeBtn').textContent = '☀️';
+      } else {
+        document.body.removeAttribute('data-theme');
+        document.getElementById('themeBtn').textContent = '🌙';
+      }
+      playSound('click');
+    }
+
+    // Copy
+    function copyContract() {
+      const addr = '0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef';
+      navigator.clipboard.writeText(addr).then(() => {
+        document.getElementById('copyBtn').textContent = '✓ Copied!';
+        playSound('click');
         setTimeout(() => {
-          copyBtn.textContent =
-            translations[currentLang].copyButton || "Copy Contract";
-        }, 1200);
-      } catch (err) {
-        alert(CONTRACT_ADDRESS);
+          document.getElementById('copyBtn').textContent = 'Copy Contract';
+        }, 2000);
+      });
+    }
+
+    // Newsletter
+    function subscribeNewsletter(e) {
+      e.preventDefault();
+      const email = document.getElementById('emailInput').value;
+      playSound('click');
+      alert('✓ Thanks for subscribing! Email: ' + email);
+      document.getElementById('emailInput').value = '';
+      document.getElementById('subscribeBtn').textContent = '✓ Subscribed!';
+      setTimeout(() => {
+        document.getElementById('subscribeBtn').textContent = 'Subscribe';
+      }, 3000);
+    }
+
+    // Customizer
+    function toggleCustomizer() {
+      document.getElementById('customizer').classList.toggle('open');
+      playSound('click');
+    }
+
+    function updateColor(type, value) {
+      document.documentElement.style.setProperty('--'+type, value);
+      playSound('click');
+    }
+
+    function resetColors() {
+      document.getElementById('primaryColor').value = '#FFD700';
+      document.getElementById('accentColor').value = '#00D9FF';
+      updateColor('primary', '#FFD700');
+      updateColor('accent', '#00D9FF');
+      playSound('click');
+    }
+
+    // Game
+    let gameRunning = false;
+    let score = 0;
+    let rocket = {x: 250, y: 50, vx: 0, vy: 0, fuel: 100};
+    let platform = {x: 200, y: 370, w: 100, h: 10};
+
+    function openGame() {
+      document.getElementById('gameModal').classList.add('active');
+      playSound('click');
+    }
+
+    function closeGame() {
+      document.getElementById('gameModal').classList.remove('active');
+      gameRunning = false;
+    }
+
+    function startGame() {
+      gameRunning = true;
+      score = 0;
+      rocket = {x: 250, y: 50, vx: 0, vy: 0, fuel: 100};
+      playSound('click');
+      gameLoop();
+    }
+
+    function gameLoop() {
+      if(!gameRunning) return;
+      
+      const canvas = document.getElementById('gameCanvas');
+      const ctx = canvas.getContext('2d');
+      
+      // Clear
+      ctx.fillStyle = '#000';
+      ctx.fillRect(0, 0, 500, 400);
+      
+      // Platform
+      ctx.fillStyle = '#FFD700';
+      ctx.fillRect(platform.x, platform.y, platform.w, platform.h);
+      
+      // Rocket
+      rocket.vy += 0.1; // gravity
+      rocket.x += rocket.vx;
+      rocket.y += rocket.vy;
+      
+      ctx.fillStyle = '#fff';
+      ctx.fillRect(rocket.x-10, rocket.y-20, 20, 40);
+      
+      // Check landing
+      if(rocket.y >= platform.y && rocket.x > platform.x && rocket.x < platform.x+platform.w) {
+        if(Math.abs(rocket.vy) < 2) {
+          score += 100;
+          gameRunning = false;
+          alert('🎉 Perfect landing! Score: '+score);
+        } else {
+          gameRunning = false;
+          alert('💥 Crash! Try again!');
+        }
+      }
+      
+      if(rocket.y > 400 || rocket.x < 0 || rocket.x > 500) {
+        gameRunning = false;
+        alert('💥 Out of bounds!');
+      }
+      
+      document.getElementById('score').textContent = score;
+      
+      if(gameRunning) requestAnimationFrame(gameLoop);
+    }
+
+    // Controls
+    document.addEventListener('keydown', (e) => {
+      if(!gameRunning) return;
+      if(e.key === 'ArrowLeft') rocket.vx -= 0.5;
+      if(e.key === 'ArrowRight') rocket.vx += 0.5;
+      if(e.key === 'ArrowUp' && rocket.fuel > 0) {
+        rocket.vy -= 0.3;
+        rocket.fuel -= 1;
       }
     });
 
-    // Simple i18n
+    // Translations
     const translations = {
       en: {
-        chainBadge: "BNB Smart Chain • BEP-20",
-        subtitle:
-          "Where meme culture meets transparent blockchain — built for creativity, fun, and community.",
-        buyButton: "Buy on PancakeSwap",
-        bscscanButton: "View on BscScan",
-        copyButton: "Copy Contract",
-        aboutTitle: "About",
-        aboutText:
-          "4EverMeme (4EVM) is a BEP-20 token on BNB Smart Chain focused on community-driven entertainment and transparency.",
-        aboutBullet1: "No buy/sell tax (contract verified on BscScan)",
-        aboutBullet2: "Liquidity pair: WBNB / 4EVM",
-        aboutBullet3: "Open-source metadata and public links",
-        tokenInfoTitle: "Token Info",
-        howToBuyTitle: "How to Buy",
-        step1: "Connect your wallet to the BNB Smart Chain (BSC).",
-        step2: "Go to PancakeSwap and select the WBNB / 4EVM pair.",
-        step3:
-          "Paste the contract address if needed and import the token.",
-        step4: "Swap BNB or WBNB for 4EVM tokens and HODL!",
-        tokenNameLabel: "Name",
-        symbolLabel: "Symbol",
-        decimalsLabel: "Decimals",
-        supplyLabel: "Total Supply",
-        disclaimer:
-          "This project is community-driven and experimental. Always do your own research before participating."
+        subtitle: 'Where meme culture meets transparent blockchain — built for creativity, fun, and community! 🚀',
+        buyBtn: 'Buy on PancakeSwap',
+        viewBtn: 'View on BscScan',
+        copyBtn: 'Copy Contract',
+        aboutTitle: 'About',
+        aboutText: '4EverMeme (4EVM) is a community-driven BEP-20 token on BNB Smart Chain focused on transparency and fun!',
+        gameTitle: 'Play & Earn',
+        gameText: 'Play our Moon Lander game! Land safely to earn points and compete on the leaderboard!'
       },
       it: {
-        chainBadge: "BNB Smart Chain • BEP-20",
-        subtitle:
-          "Dove la cultura dei meme incontra la blockchain trasparente — pensato per creatività, divertimento e comunità.",
-        buyButton: "Compra su PancakeSwap",
-        bscscanButton: "Vedi su BscScan",
-        copyButton: "Copia contratto",
-        aboutTitle: "Informazioni",
-        aboutText:
-          "4EverMeme (4EVM) è un token BEP-20 su BNB Smart Chain focalizzato su intrattenimento e trasparenza guidati dalla community.",
-        aboutBullet1:
-          "Nessuna tassa di acquisto/vendita (contratto verificato su BscScan)",
-        aboutBullet2: "Coppia di liquidità: WBNB / 4EVM",
-        aboutBullet3:
-          "Metadati open-source e link pubblici",
-        tokenInfoTitle: "Dati token",
-        howToBuyTitle: "Come acquistare",
-        step1:
-          "Collega il tuo wallet alla BNB Smart Chain (BSC).",
-        step2:
-          "Vai su PancakeSwap e seleziona la coppia WBNB / 4EVM.",
-        step3:
-          "Incolla l’indirizzo del contratto se necessario e importa il token.",
-        step4:
-          "Swappa BNB o WBNB in 4EVM e HODL!",
-        tokenNameLabel: "Nome",
-        symbolLabel: "Simbolo",
-        decimalsLabel: "Decimali",
-        supplyLabel: "Offerta totale",
-        disclaimer:
-          "Questo progetto è guidato dalla community ed è sperimentale. Fai sempre le tue ricerche prima di partecipare."
+        subtitle: 'Dove la cultura meme incontra la blockchain trasparente — pensato per creatività, divertimento e community! 🚀',
+        buyBtn: 'Compra su PancakeSwap',
+        viewBtn: 'Vedi su BscScan',
+        copyBtn: 'Copia Contratto',
+        aboutTitle: 'Informazioni',
+        aboutText: '4EverMeme (4EVM) è un token BEP-20 guidato dalla community su BNB Smart Chain focalizzato su trasparenza e divertimento!',
+        gameTitle: 'Gioca & Guadagna',
+        gameText: 'Gioca al nostro Moon Lander! Atterra in sicurezza per guadagnare punti e competere nella classifica!'
       }
     };
 
-    let currentLang = "en";
-
-    function applyTranslations(lang) {
-      currentLang = lang;
-      const dict = translations[lang] || translations.en;
-      document
-        .querySelectorAll("[data-i18n]")
-        .forEach((el) => {
-          const key = el.getAttribute("data-i18n");
-          if (dict[key]) {
-            el.textContent = dict[key];
-          }
-        });
+    function changeLang(lang) {
+      const t = translations[lang];
+      Object.keys(t).forEach(key => {
+        const el = document.getElementById(key);
+        if(el) el.textContent = t[key];
+      });
+      playSound('click');
     }
-
-    const langSelect = document.getElementById("langSelect");
-    langSelect.addEventListener("change", (e) => {
-      applyTranslations(e.target.value);
-    });
-
-    applyTranslations("en");
   </script>
 </body>
 </html>
