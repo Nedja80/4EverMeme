@@ -56,7 +56,7 @@
 
 Stay connected with the 4EverMeme community:
 
-- 🌐 **Website**: https://nenadmarinovic.github.io/4EverMeme/
+- 🌐 **Website**: https://Nedja80.github.io/4EverMeme/
 - 💬 **Telegram**: [Join our community](https://t.me/4evermeme)
 - 🐦 **Twitter/X**: [@4evermeme](https://x.com/4evermeme)
 - 💻 **GitHub**: [4EverMeme Repository](https://github.com/nedja80/4EverMeme)
