@@ -5,18 +5,21 @@
 <h1 align="center">4EverMeme (4EVM)</h1>
 
 <p align="center">
-  <strong>Where Memes Meet Blockchain</strong>
+  <strong>Where Memes Meet Blockchain 🚀</strong>
 </p>
 
 <p align="center">
-  <a href="https://bscscan.com/address/0xDE008b6e97ad5D05d4f49d3949E91e165f3092Ef#code">
+  <a href="https://bscscan.com/token/0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef">
     <img src="https://img.shields.io/badge/Verified%20on-BscScan-brightgreen?logo=binance" alt="Verified on BscScan"/>
   </a>
   <a href="https://github.com/nedja80/4EverMeme">
     <img src="https://img.shields.io/badge/GitHub-Repository-blue?logo=github" alt="GitHub"/>
   </a>
   <a href="mailto:4evermeme.official@gmail.com">
-    <img src="https://img.shields.io/badge/Email-Contact-red?logo=gmail" alt="Email"/>
+    <img src="https://img.shields.io/badge/Email-Contact%20Us-red?logo=gmail" alt="Email"/>
+  </a>
+  <a href="https://pancakeswap.finance/swap?outputCurrency=0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef&chain=bsc">
+    <img src="https://img.shields.io/badge/Buy%20on-PancakeSwap-orange?logo=pancakeswap" alt="PancakeSwap"/>
   </a>
 </p>
 
@@ -28,11 +31,11 @@
 
 ### Why 4EverMeme?
 
-- **Community-First**: Built by the community, for the community
-- **Transparent**: Fully verified smart contract on BscScan
-- **Zero Tax**: 0% buy/sell tax - 100% community owned
-- **Creative Hub**: A platform for meme enthusiasts, artists, and crypto users
-- **Decentralized Entertainment**: Bringing fun and innovation to the blockchain space
+- 🤝 **Community-First**: Built by the community, for the community
+- 🔍 **Transparent**: Fully verified smart contract on BscScan
+- 💰 **Zero Tax**: 0% buy/sell tax - 100% community owned
+- 🎨 **Creative Hub**: A platform for meme enthusiasts, artists, and crypto users
+- 🎮 **Fun & Games**: Interactive games on our website
 
 ---
 
@@ -53,46 +56,51 @@
 
 ## 🔗 Official Links
 
-Stay connected with the 4EverMeme project:
-
-- 🌐 **Website**: https://nedja80.github.io/4EverMeme/
-- 📧 **Email**: 4evermeme.official@gmail.com
-- 💻 **GitHub**: [4EverMeme Repository](https://github.com/nedja80/4EverMeme)
-- 🔍 **BscScan**: [View Contract](https://bscscan.com/token/0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef)
-- 🥞 **PancakeSwap**: [Buy 4EVM](https://pancakeswap.finance/swap?outputCurrency=0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef&chain=bsc)
+| Platform | Link |
+|----------|------|
+| 🌐 **Website** | https://nedja80.github.io/4EverMeme/ |
+| 📧 **Email** | 4evermeme.official@gmail.com |
+| 💻 **GitHub** | https://github.com/nedja80/4EverMeme |
+| 🔍 **BscScan** | [View Contract](https://bscscan.com/token/0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef) |
+| 🥞 **PancakeSwap** | [Buy 4EVM](https://pancakeswap.finance/swap?outputCurrency=0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef&chain=bsc) |
 
 ---
 
 ## 👤 Project Contact
 
-- **Developer**: Nedja80
-- **Email**: 4evermeme.official@gmail.com
-- **GitHub**: [@nedja80](https://github.com/nedja80)
+| Info | Details |
+|------|---------|
+| **Developer** | Nedja80 |
+| **Email** | 4evermeme.official@gmail.com |
+| **GitHub** | [@nedja80](https://github.com/nedja80) |
 
 ---
 
 ## 📜 Smart Contract
 
-The 4EverMeme smart contract is fully verified and follows the BEP-20 standard. It includes all standard functionalities:
+The 4EverMeme smart contract is fully verified and follows the BEP-20 standard:
 
-- ✅ Token transfers
-- ✅ Balance queries
-- ✅ Approval mechanisms
-- ✅ Allowance management
-- ✅ No hidden functions
-- ✅ 0% tax on all transactions
+| Feature | Status |
+|---------|--------|
+| Token transfers | ✅ |
+| Balance queries | ✅ |
+| Approval mechanisms | ✅ |
+| Allowance management | ✅ |
+| No hidden functions | ✅ |
+| 0% tax on all transactions | ✅ |
 
-### Contract Security
+### 🔒 Contract Security
 
-- **Similar Match Verified**: Contract bytecode matches verified source code
-- **Reference Contract**: [0xb175EE11731D1800977F074945fa327D1Fdf6148](https://bscscan.com/address/0xb175EE11731D1800977F074945fa327D1Fdf6148#code)
-- **Open Source**: Full code available on GitHub and BscScan
+| Security Feature | Details |
+|------------------|---------|
+| **Verification** | Similar Match Verified on BscScan |
+| **Reference Contract** | [0xb175EE11...Fdf6148](https://bscscan.com/address/0xb175EE11731D1800977F074945fa327D1Fdf6148#code) |
+| **Source Code** | Open Source on GitHub and BscScan |
+| **Ownership** | No owner functions |
+| **Mint Function** | None - Fixed supply |
+| **Blacklist** | None - All addresses can trade |
 
-### View Contract Source Code
-
-You can review the complete verified source code on BscScan:
-
-🔗 [**View on BscScan**](https://bscscan.com/address/0xDE008b6e97ad5D05d4f49d3949E91e165f3092Ef#code)
+🔗 [**View Contract on BscScan**](https://bscscan.com/token/0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef)
 
 ---
 
@@ -101,15 +109,16 @@ You can review the complete verified source code on BscScan:
 ### Adding 4EVM to Your Wallet
 
 1. Open your BEP-20 compatible wallet (MetaMask, Trust Wallet, etc.)
-2. Select "Add Token" or "Import Token"
-3. Choose "Custom Token"
-4. Enter the contract address: `0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef`
-5. The token details should auto-populate
+2. Select **"Add Token"** or **"Import Token"**
+3. Choose **"Custom Token"**
+4. Enter the contract address:
+   ```
+   0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef
+   ```
+5. Token details will auto-populate
 6. Confirm and add the token
 
-### Buying 4EVM
-
-You can purchase 4EVM tokens on PancakeSwap:
+### Buying 4EVM on PancakeSwap
 
 1. Visit [PancakeSwap](https://pancakeswap.finance/swap?outputCurrency=0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef&chain=bsc)
 2. Connect your BEP-20 wallet
@@ -118,103 +127,76 @@ You can purchase 4EVM tokens on PancakeSwap:
 
 ---
 
-## 🎨 Vision & Roadmap
+## 🎨 Roadmap
 
-### Phase 1: Foundation ✅ (Current)
+### Phase 1: Foundation ✅
 - ✅ Token deployment and verification
-- ✅ GitHub repository establishment
-- ✅ Website launched
+- ✅ GitHub repository established
+- ✅ Website launched with games
 - ✅ Official email established
-- ✅ BscScan listing request submitted
+- ✅ BscScan listing submitted
 
-### Phase 2: Growth 🚧 (In Progress)
-- 📱 Social media presence expansion
-- 🎨 Meme contests and community events
+### Phase 2: Growth 🚧
+- 📱 Social media expansion
+- 🎨 Meme contests and events
 - 🤝 Strategic partnerships
 - 📈 DEX and CEX listings
-- 🎮 Interactive games on website
 
-### Phase 3: Expansion 🔮 (Future)
+### Phase 3: Expansion 🔮
 - 🌐 Full platform launch
-- 🎮 Advanced gamification features
+- 🎮 Advanced gamification
 - 🎁 Community rewards program
-- 🔧 Additional utilities and use cases
-
----
-
-## 👥 Community
-
-4EverMeme thrives on community participation. We encourage all holders and enthusiasts to:
-
-- Share your best memes
-- Participate in project discussions
-- Propose new ideas and initiatives
-- Help spread the word about 4EVM
-- Contribute to the codebase
-
-**Community Building**: We are actively building our community. Social channels will be announced soon!
+- 🔧 Additional utilities
 
 ---
 
 ## 🔒 Security & Transparency
 
-### Token Security Features
-
-- **No Ownership**: Contract has no owner functions
-- **No Mint Function**: Fixed supply, no new tokens can be created
-- **No Blacklist**: All addresses can freely trade
-- **0% Tax**: No hidden fees on transactions
-- **Transparent**: All code is open source and verified
-
-### Audit Status
-
-- **Similar Match Verified**: Bytecode verified on BscScan
-- **Open Source**: Full transparency on GitHub
-- **Community Project**: No team allocation or hidden wallets
+| Feature | Description |
+|---------|-------------|
+| **No Owner** | Contract has no owner functions |
+| **Fixed Supply** | No mint function, 1B tokens max |
+| **No Blacklist** | All addresses can freely trade |
+| **Zero Tax** | 0% on all transactions |
+| **Open Source** | Full code on GitHub and BscScan |
+| **Verified** | Similar Match on BscScan |
 
 ---
 
 ## ⚠️ Disclaimer
 
-**Important Notice:**
-
-This project is community-driven and experimental in nature. Cryptocurrency investments carry inherent risks, and you should never invest more than you can afford to lose.
-
-- **DYOR**: Always do your own research before participating
-- **No Financial Advice**: Nothing in this repository constitutes financial advice
-- **Risk Awareness**: Be aware of the volatility and risks associated with cryptocurrency
-- **Community Project**: This is a community initiative with no guarantees of returns
-- **Experimental**: This is a meme token created for entertainment and community building
-
----
-
-## 📄 License
-
-This project is open source under the MIT License. See the [LICENSE](LICENSE) file for details.
+> **Important Notice:**
+> 
+> This project is community-driven and experimental. Cryptocurrency investments carry inherent risks. Never invest more than you can afford to lose.
+> 
+> - **DYOR**: Always do your own research
+> - **No Financial Advice**: This is not financial advice
+> - **Risk Awareness**: Crypto is volatile
+> - **Experimental**: Meme token for entertainment
 
 ---
 
 ## 🤝 Contributing
 
-We welcome contributions from the community! Whether it's:
+We welcome contributions:
 
-- Code improvements
-- Documentation updates
-- Creative content
-- Bug reports
-- Feature suggestions
+- 💻 Code improvements
+- 📝 Documentation updates
+- 🎨 Creative content
+- 🐛 Bug reports
+- 💡 Feature suggestions
 
-Feel free to submit a pull request or open an issue on GitHub.
+Submit a pull request or [open an issue](https://github.com/nedja80/4EverMeme/issues)!
 
 ---
 
 ## 📞 Contact & Support
 
-For questions, suggestions, or partnership inquiries:
-
-- 📧 Email: 4evermeme.official@gmail.com
-- 💻 GitHub Issues: [Open an issue](https://github.com/nedja80/4EverMeme/issues)
-- 🌐 Website: https://nedja80.github.io/4EverMeme/
+| Channel | Link |
+|---------|------|
+| 📧 **Email** | 4evermeme.official@gmail.com |
+| 💻 **GitHub Issues** | [Open an issue](https://github.com/nedja80/4EverMeme/issues) |
+| 🌐 **Website** | https://nedja80.github.io/4EverMeme/ |
 
 ---
 
@@ -223,5 +205,5 @@ For questions, suggestions, or partnership inquiries:
 </p>
 
 <p align="center">
-  <sub>© 2024 4EverMeme. All rights reserved.</sub>
+  <sub>© 2025 4EverMeme (4EVM). All rights reserved.</sub>
 </p>
