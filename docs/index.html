@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>4EverMeme (4EVM) 🚀 To The Moon!</title>
-  <meta name="description" content="4EverMeme - Play games, customize, join the community!">
+  <meta name="description" content="4EverMeme - Community-driven BEP-20 token on BNB Smart Chain. Play games, have fun!">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
@@ -473,33 +473,6 @@
       color: var(--muted);
       margin-bottom: 20px;
     }
-    
-    .newsletter-form {
-      display: flex;
-      gap: 10px;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-    
-    .newsletter input {
-      flex: 1;
-      padding: 14px 20px;
-      border-radius: 25px;
-      border: 1px solid rgba(255,255,255,0.2);
-      background: rgba(0,0,0,0.3);
-      color: var(--text);
-      font-size: 14px;
-    }
-    
-    .newsletter button {
-      padding: 14px 30px;
-      border-radius: 25px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      border: none;
-      color: #000;
-      font-weight: 700;
-      cursor: pointer;
-    }
 
     .customizer {
       position: fixed;
@@ -707,6 +680,7 @@
       cursor: pointer;
       margin: 10px 0;
       transition: all 0.3s;
+      color: var(--text);
     }
 
     .sound-toggle:hover {
@@ -730,6 +704,7 @@
       cursor: pointer;
       user-select: none;
       transition: all 0.1s;
+      color: var(--text);
     }
     
     .mobile-btn:active {
@@ -816,13 +791,12 @@
       .grid { grid-template-columns: 1fr; }
       .chart-box { height: 400px; }
       canvas { max-width: 100%; height: auto; }
-      .newsletter-form { flex-direction: column; }
     }
   </style>
 </head>
 <body>
   <div class="banner" id="banner">
-    🎮 <strong>NEW GAMES!</strong> Tetris • Flappy 4EVM • Scream 4EVM (Voice!) • Progressive difficulty!
+    🎮 <strong>PLAY GAMES!</strong> Tetris • Flappy 4EVM • Scream 4EVM (Voice Control!)
     <button onclick="document.getElementById('banner').style.display='none'">×</button>
   </div>
 
@@ -831,10 +805,10 @@
   <div class="content">
     <nav>
       <div class="logo-section">
-        <img src="https://i.postimg.cc/5y0H78jp/09DF90F9-3A8B-49B3-8A87-C2FFFF78C819.png" class="logo" id="logo">
+        <img src="https://i.postimg.cc/5y0H78jp/09DF90F9-3A8B-49B3-8A87-C2FFFF78C819.png" class="logo" id="logo" alt="4EverMeme Logo">
         <div class="brand">
           <h1>4EVERMEME</h1>
-          <p style="font-size:12px;color:var(--muted);letter-spacing:2px">TO THE MOON!</p>
+          <p style="font-size:12px;color:var(--muted);letter-spacing:2px">TO THE MOON! 🚀</p>
         </div>
       </div>
       <div class="nav-controls">
@@ -890,13 +864,12 @@
       <div class="contract">
         <span>📄</span>
         <code>0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef</code>
-        <span class="verified">✓ Similar Match</span>
+        <span class="verified">✓ Verified</span>
       </div>
 
       <div class="social">
-        <a href="https://t.me/4evermeme" target="_blank">📱</a>
-        <a href="https://x.com/4evermeme" target="_blank">🐦</a>
-        <a href="https://github.com/nedja80/4EverMeme" target="_blank">💻</a>
+        <a href="mailto:4evermeme.official@gmail.com" title="Email Us">📧</a>
+        <a href="https://github.com/nedja80/4EverMeme" target="_blank" title="GitHub">💻</a>
       </div>
     </section>
 
@@ -979,31 +952,34 @@
           <tr><td style="color:var(--muted);padding:10px 0">Symbol</td><td style="text-align:right;font-weight:600;color:var(--primary)">4EVM</td></tr>
           <tr><td style="color:var(--muted);padding:10px 0">Decimals</td><td style="text-align:right;font-weight:600;color:var(--primary)">18</td></tr>
           <tr><td style="color:var(--muted);padding:10px 0">Supply</td><td style="text-align:right;font-weight:600;color:var(--primary)">1,000,000,000</td></tr>
+          <tr><td style="color:var(--muted);padding:10px 0">Tax</td><td style="text-align:right;font-weight:600;color:var(--primary)">0%</td></tr>
         </table>
       </div>
 
       <div class="card">
-        <h3>🛒 How to Buy</h3>
+        <h3>📞 Contact</h3>
         <div class="divider"></div>
         <ul>
-          <li>Connect wallet to BSC</li>
-          <li>Go to PancakeSwap</li>
-          <li>Paste contract address</li>
-          <li>Swap BNB for 4EVM! 💎</li>
+          <li>📧 4evermeme.official@gmail.com</li>
+          <li>💻 github.com/nedja80/4EverMeme</li>
+          <li>🌐 nedja80.github.io/4EverMeme</li>
         </ul>
+        <a href="mailto:4evermeme.official@gmail.com" class="btn btn-secondary" style="width:100%;margin-top:15px;justify-content:center">
+          📧 Contact Us
+        </a>
       </div>
     </div>
 
     <footer>
-      <p>⚠️ Community-driven project. Always DYOR!</p>
+      <p>⚠️ Community-driven project. Always DYOR! This is not financial advice.</p>
       <div class="footer-links">
         <a href="https://github.com/nedja80/4EverMeme" target="_blank">GitHub</a>
         <span style="color:var(--muted)">•</span>
-        <a href="https://t.me/4evermeme" target="_blank">Telegram</a>
+        <a href="mailto:4evermeme.official@gmail.com">Email</a>
         <span style="color:var(--muted)">•</span>
-        <a href="https://x.com/4evermeme" target="_blank">Twitter</a>
+        <a href="https://bscscan.com/token/0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef" target="_blank">BscScan</a>
       </div>
-      <p style="margin-top:20px;font-size:11px">© 2024 4EverMeme • Made with ❤️</p>
+      <p style="margin-top:20px;font-size:11px">© 2025 4EverMeme (4EVM) • Made with ❤️</p>
     </footer>
   </div>
 
@@ -1028,7 +1004,6 @@
 
   <!-- Game Modal -->
   <div class="game-modal" id="gameModal">
-    <!-- Game Menu -->
     <div class="game-menu" id="gameMenu">
       <h3>🎮 Choose Your Game</h3>
       <div class="game-list">
@@ -1057,12 +1032,9 @@
       <button class="btn btn-secondary" onclick="closeGameModal()" style="margin-top:20px">Close</button>
     </div>
 
-    <!-- Tetris Game (unchanged - already perfect) -->
     <div class="game-container" id="tetrisGame">
       <h3>🎮 TETRIS</h3>
-      <div class="game-score">
-        Score: <span id="tetrisScore">0</span> | Lines: <span id="tetrisLines">0</span>
-      </div>
+      <div class="game-score">Score: <span id="tetrisScore">0</span> | Lines: <span id="tetrisLines">0</span></div>
       <canvas id="tetrisCanvas" width="300" height="600"></canvas>
       <div class="mobile-controls" id="tetrisMobile">
         <div class="mobile-btn" ontouchstart="tetrisMove('left')">←</div>
@@ -1077,7 +1049,6 @@
       </div>
     </div>
 
-    <!-- Flappy Game (NEW with 3 lives system) -->
     <div class="game-container" id="flappyGame">
       <h3>🐦 FLAPPY 4EVM</h3>
       <div class="game-score">Score: <span id="flappyScore">0</span> | Best: <span id="flappyBest">0</span></div>
@@ -1088,27 +1059,17 @@
       </div>
       <canvas id="flappyCanvas" width="400" height="600"></canvas>
       <div class="warning-icon" id="flappyWarning">⚠️</div>
-      
       <div class="mobile-controls" style="display:grid;grid-template-columns:1fr;max-width:200px;margin:20px auto">
-        <div class="mobile-btn" style="padding:30px;font-size:32px" ontouchstart="flappyJump()" onmousedown="flappyJump()">
-          TAP TO FLY 🐦
-        </div>
+        <div class="mobile-btn" style="padding:30px;font-size:32px" ontouchstart="flappyJump()" onmousedown="flappyJump()">TAP TO FLY 🐦</div>
       </div>
-      
-      <p style="color:var(--muted);margin:15px 0;font-size:14px">
-        Tap button/screen or SPACE to fly!<br>
-        <span style="color:var(--accent)">🔵 Obstacles = -1 life | ⚠️ Walls = Warning only!</span>
-      </p>
-      <div class="sound-toggle" onclick="toggleFlappySound()" id="flappySoundToggle">
-        🔊 SOUND: ON
-      </div>
+      <p style="color:var(--muted);margin:15px 0;font-size:14px">Tap or press SPACE to fly!</p>
+      <button class="sound-toggle" onclick="toggleFlappySound()" id="flappySoundToggle">🔊 SOUND: ON</button>
       <div class="game-controls">
         <button class="btn btn-primary" onclick="startFlappy()">START</button>
         <button class="btn btn-secondary" onclick="backToMenu()">BACK</button>
       </div>
     </div>
 
-    <!-- Scream Game (NEW with 3 lives system) -->
     <div class="game-container" id="screamGame">
       <h3>🎤 SCREAM 4EVM</h3>
       <div class="game-score">Score: <span id="screamScore">0</span> | Best: <span id="screamBest">0</span></div>
@@ -1123,13 +1084,8 @@
       </div>
       <canvas id="screamCanvas" width="400" height="400"></canvas>
       <div class="warning-icon" id="screamWarning">⚠️</div>
-      <p style="color:var(--muted);margin:15px 0;font-size:14px">
-        🔊 SHOUT to jump! Louder = Higher!<br>
-        <span style="color:var(--accent)">🔵 Obstacles = -1 life | ⚠️ Walls = Warning only!</span>
-      </p>
-      <div class="sound-toggle" onclick="toggleScreamSound()" id="screamSoundToggle">
-        🔊 SOUND: ON
-      </div>
+      <p style="color:var(--muted);margin:15px 0;font-size:14px">🔊 SHOUT to jump! Louder = Higher!</p>
+      <button class="sound-toggle" onclick="toggleScreamSound()" id="screamSoundToggle">🔊 SOUND: ON</button>
       <div class="game-controls">
         <button class="btn btn-primary" onclick="startScream()">START</button>
         <button class="btn btn-secondary" onclick="stopScream()">STOP</button>
@@ -1139,9 +1095,8 @@
   </div>
 
   <script>
-    // Falling shooting stars
+    // Stars
     const starsEl = document.getElementById('stars');
-    
     function createStar() {
       const star = document.createElement('div');
       star.className = 'star';
@@ -1151,62 +1106,28 @@
       star.style.animationDuration = duration+'s, 2s';
       star.style.animationDelay = (Math.random()*5)+'s, 0s';
       starsEl.appendChild(star);
-      
-      // Remove and recreate after animation ends
-      setTimeout(() => {
-        star.remove();
-        createStar();
-      }, (duration + 5) * 1000);
+      setTimeout(() => { star.remove(); createStar(); }, (duration + 5) * 1000);
     }
-    
-    // Create initial stars
-    for(let i=0; i<80; i++) {
-      setTimeout(() => createStar(), i * 100);
-    }
+    for(let i=0; i<80; i++) setTimeout(() => createStar(), i * 100);
 
     // Theme
     let theme = 'dark';
     function toggleTheme() {
       theme = theme === 'dark' ? 'light' : 'dark';
-      if(theme === 'light') {
-        document.body.setAttribute('data-theme', 'light');
-        document.getElementById('themeBtn').textContent = '☀️';
-      } else {
-        document.body.removeAttribute('data-theme');
-        document.getElementById('themeBtn').textContent = '🌙';
-      }
+      document.body.setAttribute('data-theme', theme === 'light' ? 'light' : '');
+      document.getElementById('themeBtn').textContent = theme === 'light' ? '☀️' : '🌙';
     }
 
     // Copy contract
     function copyContract() {
       navigator.clipboard.writeText('0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef');
       document.getElementById('copyBtn').textContent = '✓ Copied!';
-      setTimeout(() => {
-        document.getElementById('copyBtn').textContent = 'Copy Contract';
-      }, 2000);
-    }
-
-    // Newsletter
-    function subscribeNewsletter(e) {
-      e.preventDefault();
-      const email = document.getElementById('emailInput').value;
-      alert('✓ Thanks for subscribing! Email: ' + email);
-      document.getElementById('emailInput').value = '';
-      document.getElementById('subscribeBtn').textContent = '✓ Subscribed!';
-      setTimeout(() => {
-        document.getElementById('subscribeBtn').textContent = 'Subscribe';
-      }, 3000);
+      setTimeout(() => document.getElementById('copyBtn').textContent = 'Copy Contract', 2000);
     }
 
     // Customizer
-    function toggleCustomizer() {
-      document.getElementById('customizer').classList.toggle('open');
-    }
-
-    function updateColor(type, value) {
-      document.documentElement.style.setProperty('--'+type, value);
-    }
-
+    function toggleCustomizer() { document.getElementById('customizer').classList.toggle('open'); }
+    function updateColor(type, value) { document.documentElement.style.setProperty('--'+type, value); }
     function resetColors() {
       document.getElementById('primaryColor').value = '#FFD700';
       document.getElementById('accentColor').value = '#00D9FF';
@@ -1214,49 +1135,31 @@
       updateColor('accent', '#00D9FF');
     }
 
-    // Simple sound effects using Web Audio API
-    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    
+    // Audio
+    let audioCtx;
+    function getAudioContext() {
+      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      return audioCtx;
+    }
     function playTone(freq, duration, type='sine') {
       try {
-        const oscillator = audioCtx.createOscillator();
-        const gainNode = audioCtx.createGain();
-        oscillator.connect(gainNode);
-        gainNode.connect(audioCtx.destination);
-        oscillator.frequency.value = freq;
-        oscillator.type = type;
-        gainNode.gain.setValueAtTime(0.1, audioCtx.currentTime);
-        gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + duration);
-        oscillator.start(audioCtx.currentTime);
-        oscillator.stop(audioCtx.currentTime + duration);
+        const ctx = getAudioContext();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.frequency.value = freq;
+        osc.type = type;
+        gain.gain.setValueAtTime(0.1, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + duration);
+        osc.start(ctx.currentTime);
+        osc.stop(ctx.currentTime + duration);
       } catch(e) {}
     }
-
-    function playJumpSound() {
-      playTone(600, 0.1, 'square');
-    }
-
-    function playHitSound() {
-      playTone(100, 0.3, 'sawtooth');
-    }
-
-    function playScoreSound() {
-      playTone(800, 0.1, 'sine');
-      setTimeout(() => playTone(1000, 0.1, 'sine'), 50);
-    }
-
-    function playClickSound() {
-      playTone(400, 0.05, 'sine');
-    }
-
-    // Rocket launch with FIRE!
-    function launchRocket() {
-      const logo = document.getElementById('logo');
-      logo.classList.add('flying');
-      setTimeout(() => {
-        logo.classList.remove('flying');
-      }, 3000);
-    }
+    function playJumpSound() { playTone(600, 0.1, 'square'); }
+    function playHitSound() { playTone(100, 0.3, 'sawtooth'); }
+    function playScoreSound() { playTone(800, 0.1, 'sine'); setTimeout(() => playTone(1000, 0.1, 'sine'), 50); }
+    function playClickSound() { playTone(400, 0.05, 'sine'); }
 
     // Game Modal
     function openGameMenu() {
@@ -1264,33 +1167,29 @@
       document.getElementById('gameMenu').style.display = 'block';
       playClickSound();
     }
-
     function closeGameModal() {
       document.getElementById('gameModal').classList.remove('active');
       stopAllGames();
       playClickSound();
     }
-
     function openGame(game) {
       document.getElementById('gameMenu').style.display = 'none';
       document.getElementById(game+'Game').classList.add('active');
       playClickSound();
     }
-
     function backToMenu() {
       document.querySelectorAll('.game-container').forEach(g => g.classList.remove('active'));
       document.getElementById('gameMenu').style.display = 'block';
       stopAllGames();
       playClickSound();
     }
-
     function stopAllGames() {
       tetrisRunning = false;
       flappyRunning = false;
       stopScream();
     }
 
-    // TETRIS GAME (unchanged - already perfect)
+    // TETRIS
     const tetrisCanvas = document.getElementById('tetrisCanvas');
     const tetrisCtx = tetrisCanvas.getContext('2d');
     const COLS = 10, ROWS = 20, BLOCK = 30;
@@ -1300,116 +1199,70 @@
 
     function startTetris() {
       tetrisBoard = Array(ROWS).fill(null).map(() => Array(COLS).fill(0));
-      tetrisScore = 0;
-      tetrisLines = 0;
-      tetrisRunning = true;
-      spawnTetris();
-      tetrisLoop();
+      tetrisScore = 0; tetrisLines = 0; tetrisRunning = true;
+      spawnTetris(); tetrisLoop();
     }
-
     function spawnTetris() {
       const i = Math.floor(Math.random()*SHAPES.length);
       tetrisPiece = {shape: SHAPES[i], color: COLORS[i], x: 4, y: 0};
     }
-
     function drawTetris() {
       tetrisCtx.fillStyle = '#000';
       tetrisCtx.fillRect(0,0,300,600);
-      
-      for(let y=0; y<ROWS; y++) {
-        for(let x=0; x<COLS; x++) {
-          if(tetrisBoard[y][x]) {
-            tetrisCtx.fillStyle = tetrisBoard[y][x];
-            tetrisCtx.fillRect(x*BLOCK, y*BLOCK, BLOCK-1, BLOCK-1);
-          }
-        }
+      for(let y=0; y<ROWS; y++) for(let x=0; x<COLS; x++) if(tetrisBoard[y][x]) {
+        tetrisCtx.fillStyle = tetrisBoard[y][x];
+        tetrisCtx.fillRect(x*BLOCK, y*BLOCK, BLOCK-1, BLOCK-1);
       }
-      
       if(tetrisPiece) {
         tetrisCtx.fillStyle = tetrisPiece.color;
-        tetrisPiece.shape.forEach((row, dy) => {
-          row.forEach((val, dx) => {
-            if(val) {
-              tetrisCtx.fillRect((tetrisPiece.x+dx)*BLOCK, (tetrisPiece.y+dy)*BLOCK, BLOCK-1, BLOCK-1);
-            }
-          });
-        });
+        tetrisPiece.shape.forEach((row, dy) => row.forEach((val, dx) => {
+          if(val) tetrisCtx.fillRect((tetrisPiece.x+dx)*BLOCK, (tetrisPiece.y+dy)*BLOCK, BLOCK-1, BLOCK-1);
+        }));
       }
     }
-
     function tetrisLoop() {
       if(!tetrisRunning) return;
       if(!moveTetris(0,1)) {
-        lockTetris();
-        clearTetrisLines();
-        spawnTetris();
-        if(checkTetrisCollision(0,0)) {
-          tetrisRunning = false;
-          alert('Game Over! Score: '+tetrisScore);
-          return;
-        }
+        lockTetris(); clearTetrisLines(); spawnTetris();
+        if(checkTetrisCollision(0,0)) { tetrisRunning = false; alert('Game Over! Score: '+tetrisScore); return; }
       }
       drawTetris();
       setTimeout(tetrisLoop, 500);
     }
-
     function moveTetris(dx, dy) {
-      tetrisPiece.x += dx;
-      tetrisPiece.y += dy;
-      if(checkTetrisCollision(0,0)) {
-        tetrisPiece.x -= dx;
-        tetrisPiece.y -= dy;
-        return false;
-      }
+      tetrisPiece.x += dx; tetrisPiece.y += dy;
+      if(checkTetrisCollision(0,0)) { tetrisPiece.x -= dx; tetrisPiece.y -= dy; return false; }
       return true;
     }
-
     function rotateTetris() {
       const rotated = tetrisPiece.shape[0].map((_, i) => tetrisPiece.shape.map(row => row[i]).reverse());
       const prev = tetrisPiece.shape;
       tetrisPiece.shape = rotated;
       if(checkTetrisCollision(0,0)) tetrisPiece.shape = prev;
     }
-
     function checkTetrisCollision(dx, dy) {
-      return tetrisPiece.shape.some((row, y) =>
-        row.some((val, x) => {
-          if(!val) return false;
-          const newX = tetrisPiece.x+x+dx;
-          const newY = tetrisPiece.y+y+dy;
-          return newX<0 || newX>=COLS || newY>=ROWS || (newY>=0 && tetrisBoard[newY][newX]);
-        })
-      );
+      return tetrisPiece.shape.some((row, y) => row.some((val, x) => {
+        if(!val) return false;
+        const newX = tetrisPiece.x+x+dx, newY = tetrisPiece.y+y+dy;
+        return newX<0 || newX>=COLS || newY>=ROWS || (newY>=0 && tetrisBoard[newY][newX]);
+      }));
     }
-
     function lockTetris() {
-      tetrisPiece.shape.forEach((row, y) => {
-        row.forEach((val, x) => {
-          if(val && tetrisPiece.y+y>=0) {
-            tetrisBoard[tetrisPiece.y+y][tetrisPiece.x+x] = tetrisPiece.color;
-          }
-        });
-      });
+      tetrisPiece.shape.forEach((row, y) => row.forEach((val, x) => {
+        if(val && tetrisPiece.y+y>=0) tetrisBoard[tetrisPiece.y+y][tetrisPiece.x+x] = tetrisPiece.color;
+      }));
     }
-
     function clearTetrisLines() {
       let cleared = 0;
-      for(let y=ROWS-1; y>=0; y--) {
-        if(tetrisBoard[y].every(c => c)) {
-          tetrisBoard.splice(y,1);
-          tetrisBoard.unshift(Array(COLS).fill(0));
-          cleared++;
-          y++;
-        }
+      for(let y=ROWS-1; y>=0; y--) if(tetrisBoard[y].every(c => c)) {
+        tetrisBoard.splice(y,1); tetrisBoard.unshift(Array(COLS).fill(0)); cleared++; y++;
       }
       if(cleared) {
-        tetrisLines += cleared;
-        tetrisScore += cleared*100*cleared;
+        tetrisLines += cleared; tetrisScore += cleared*100*cleared;
         document.getElementById('tetrisScore').textContent = tetrisScore;
         document.getElementById('tetrisLines').textContent = tetrisLines;
       }
     }
-
     function tetrisMove(dir) {
       if(!tetrisRunning) return;
       if(dir==='left') moveTetris(-1,0);
@@ -1419,107 +1272,56 @@
       if(dir==='drop') while(moveTetris(0,1)) {}
       drawTetris();
     }
-
     document.addEventListener('keydown', e => {
       if(!tetrisRunning) return;
       if(e.key==='ArrowLeft') tetrisMove('left');
       if(e.key==='ArrowRight') tetrisMove('right');
       if(e.key==='ArrowUp') tetrisMove('rotate');
       if(e.key==='ArrowDown') tetrisMove('down');
-      if(e.key===' ') tetrisMove('drop');
+      if(e.key===' ' && !flappyRunning) tetrisMove('drop');
     });
 
-    // FLAPPY GAME (NEW with 3 lives, progressive difficulty, wall bounce)
+    // FLAPPY
     const flappyCanvas = document.getElementById('flappyCanvas');
     const flappyCtx = flappyCanvas.getContext('2d');
     let flappyRunning = false, flappyScore = 0, flappyLives = 3, flappyBest = parseInt(localStorage.getItem('flappyBest')||0);
-    let flappySoundOn = true;
-    let bird = {y:200, vy:0, invincible:false};
-    let pipes = [];
-    let flappyFrame = 0, flappySpeed = 2;
+    let flappySoundOn = true, bird = {y:200, vy:0, invincible:false}, pipes = [], flappyFrame = 0, flappySpeed = 2;
     document.getElementById('flappyBest').textContent = flappyBest;
 
     function toggleFlappySound() {
       flappySoundOn = !flappySoundOn;
       document.getElementById('flappySoundToggle').textContent = flappySoundOn ? '🔊 SOUND: ON' : '🔇 SOUND: OFF';
     }
-
     function updateFlappyLives() {
-      const hearts = document.querySelectorAll('#flappyLives .heart');
-      hearts.forEach((h, i) => {
-        if(i >= flappyLives) h.classList.add('lost');
-        else h.classList.remove('lost');
-      });
+      document.querySelectorAll('#flappyLives .heart').forEach((h, i) => h.classList.toggle('lost', i >= flappyLives));
     }
-
     function showFlappyWarning() {
-      const warning = document.getElementById('flappyWarning');
-      warning.classList.add('show');
-      flappyCanvas.classList.add('flash-red');
-      setTimeout(() => {
-        warning.classList.remove('show');
-        flappyCanvas.classList.remove('flash-red');
-      }, 500);
+      const w = document.getElementById('flappyWarning');
+      w.classList.add('show'); flappyCanvas.classList.add('flash-red');
+      setTimeout(() => { w.classList.remove('show'); flappyCanvas.classList.remove('flash-red'); }, 500);
     }
-
     function startFlappy() {
-      flappyRunning = true;
-      flappyScore = 0;
-      flappyLives = 3;
-      bird = {y:200, vy:0, invincible:false};
-      pipes = [];
-      flappyFrame = 0;
-      flappySpeed = 2;
+      flappyRunning = true; flappyScore = 0; flappyLives = 3;
+      bird = {y:200, vy:0, invincible:false}; pipes = []; flappyFrame = 0; flappySpeed = 2;
       document.getElementById('flappyScore').textContent = 0;
-      updateFlappyLives();
-      flappyLoop();
+      updateFlappyLives(); flappyLoop();
     }
-
     function flappyLoop() {
       if(!flappyRunning) return;
-      
-      // Progressive speed based on score
       if(flappyScore > 5) flappySpeed = 3;
       if(flappyScore > 15) flappySpeed = 4;
       if(flappyScore > 30) flappySpeed = 5;
-      if(flappyScore > 50) flappySpeed = 6;
       
-      flappyCtx.fillStyle = '#87CEEB';
-      flappyCtx.fillRect(0,0,400,600);
+      flappyCtx.fillStyle = '#87CEEB'; flappyCtx.fillRect(0,0,400,600);
+      bird.vy += 0.5; bird.y += bird.vy;
       
-      bird.vy += 0.5;
-      bird.y += bird.vy;
+      if(bird.y > 570) { bird.y = 570; bird.vy = -bird.vy * 0.5; flappyCanvas.classList.add('shake'); showFlappyWarning(); setTimeout(() => flappyCanvas.classList.remove('shake'), 300); }
+      if(bird.y < 30) { bird.y = 30; bird.vy = -bird.vy * 0.5; flappyCanvas.classList.add('shake'); showFlappyWarning(); setTimeout(() => flappyCanvas.classList.remove('shake'), 300); }
       
-      // Wall bounce (no damage!)
-      if(bird.y > 570) {
-        bird.y = 570;
-        bird.vy = -bird.vy * 0.5;
-        flappyCanvas.classList.add('shake');
-        showFlappyWarning();
-        setTimeout(() => flappyCanvas.classList.remove('shake'), 300);
-      }
-      if(bird.y < 30) {
-        bird.y = 30;
-        bird.vy = -bird.vy * 0.5;
-        flappyCanvas.classList.add('shake');
-        showFlappyWarning();
-        setTimeout(() => flappyCanvas.classList.remove('shake'), 300);
-      }
-      
-      // Draw bird with animation
-      flappyCtx.save();
-      flappyCtx.translate(80, bird.y);
-      if(bird.invincible) {
-        flappyCtx.globalAlpha = Math.sin(Date.now()/100) * 0.5 + 0.5;
-      }
-      flappyCtx.fillStyle = '#FFD700';
-      flappyCtx.beginPath();
-      flappyCtx.arc(0, 0, 20, 0, Math.PI*2);
-      flappyCtx.fill();
-      // Eyes
-      flappyCtx.fillStyle = '#000';
-      flappyCtx.fillRect(-8, -5, 6, 6);
-      flappyCtx.fillRect(2, -5, 6, 6);
+      flappyCtx.save(); flappyCtx.translate(80, bird.y);
+      if(bird.invincible) flappyCtx.globalAlpha = Math.sin(Date.now()/100) * 0.5 + 0.5;
+      flappyCtx.fillStyle = '#FFD700'; flappyCtx.beginPath(); flappyCtx.arc(0, 0, 20, 0, Math.PI*2); flappyCtx.fill();
+      flappyCtx.fillStyle = '#000'; flappyCtx.fillRect(-8, -5, 6, 6); flappyCtx.fillRect(2, -5, 6, 6);
       flappyCtx.restore();
       
       if(flappyFrame % Math.max(50, 90-flappyScore*2) === 0) {
@@ -1529,237 +1331,132 @@
       
       pipes.forEach((p, i) => {
         p.x -= flappySpeed;
-        
         flappyCtx.fillStyle = '#4ADE80';
         flappyCtx.fillRect(p.x, 0, 60, p.y);
         flappyCtx.fillRect(p.x, p.y+p.gap, 60, 600);
         
         if(p.x+60 < 80 && !p.scored) {
-          flappyScore++;
-          p.scored = true;
+          flappyScore++; p.scored = true;
           document.getElementById('flappyScore').textContent = flappyScore;
           if(flappySoundOn) playScoreSound();
         }
         
-        // Collision with obstacles = lose life
         if(!bird.invincible && (80>p.x && 80<p.x+60) && (bird.y-20<p.y || bird.y+20>p.y+p.gap)) {
-          flappyLives--;
-          updateFlappyLives();
-          bird.invincible = true;
-          bird.vy = -8;
-          bird.y -= 30;
+          flappyLives--; updateFlappyLives();
+          bird.invincible = true; bird.vy = -8; bird.y -= 30;
           if(flappySoundOn) playHitSound();
-          
           setTimeout(() => bird.invincible = false, 2000);
-          
           if(flappyLives <= 0) {
             flappyRunning = false;
-            if(flappyScore > flappyBest) {
-              flappyBest = flappyScore;
-              localStorage.setItem('flappyBest', flappyBest);
-              document.getElementById('flappyBest').textContent = flappyBest;
-            }
+            if(flappyScore > flappyBest) { flappyBest = flappyScore; localStorage.setItem('flappyBest', flappyBest); document.getElementById('flappyBest').textContent = flappyBest; }
             alert('💥 Game Over!\nScore: '+flappyScore+'\n🏆 Best: '+flappyBest);
             return;
           }
         }
-        
         if(p.x < -60) pipes.splice(i,1);
       });
       
       flappyFrame++;
       requestAnimationFrame(flappyLoop);
     }
-
-    function flappyJump() {
-      if(flappyRunning) {
-        bird.vy = -10;
-        if(flappySoundOn) playJumpSound();
-      }
-    }
-
+    function flappyJump() { if(flappyRunning) { bird.vy = -10; if(flappySoundOn) playJumpSound(); } }
     flappyCanvas.addEventListener('click', flappyJump);
-    flappyCanvas.addEventListener('touchstart', e => {
-      e.preventDefault();
-      flappyJump();
-    });
+    flappyCanvas.addEventListener('touchstart', e => { e.preventDefault(); flappyJump(); });
+    document.addEventListener('keydown', e => { if(e.key===' ' && flappyRunning) { e.preventDefault(); flappyJump(); } });
 
-    // SCREAM GAME (NEW with 3 lives, progressive difficulty, wall bounce)
+    // SCREAM
     const screamCanvas = document.getElementById('screamCanvas');
     const screamCtx = screamCanvas.getContext('2d');
     let screamRunning = false, screamScore = 0, screamLives = 3, screamBest = parseInt(localStorage.getItem('screamBest')||0);
-    let screamSoundOn = true;
-    let player = {x:50, y:300, vy:0, invincible:false};
-    let obstacles = [];
-    let audioContext, analyser, microphone, dataArray;
-    let screamFrame = 0, screamSpeed = 3;
+    let screamSoundOn = true, player = {x:50, y:300, vy:0, invincible:false}, obstacles = [];
+    let screamAudioContext, analyser, microphone, dataArray, screamFrame = 0, screamSpeed = 3;
     document.getElementById('screamBest').textContent = screamBest;
 
     function toggleScreamSound() {
       screamSoundOn = !screamSoundOn;
       document.getElementById('screamSoundToggle').textContent = screamSoundOn ? '🔊 SOUND: ON' : '🔇 SOUND: OFF';
     }
-
     function updateScreamLives() {
-      const hearts = document.querySelectorAll('#screamLives .heart');
-      hearts.forEach((h, i) => {
-        if(i >= screamLives) h.classList.add('lost');
-        else h.classList.remove('lost');
-      });
+      document.querySelectorAll('#screamLives .heart').forEach((h, i) => h.classList.toggle('lost', i >= screamLives));
     }
-
     function showScreamWarning() {
-      const warning = document.getElementById('screamWarning');
-      warning.classList.add('show');
-      screamCanvas.classList.add('flash-red');
-      setTimeout(() => {
-        warning.classList.remove('show');
-        screamCanvas.classList.remove('flash-red');
-      }, 500);
+      const w = document.getElementById('screamWarning');
+      w.classList.add('show'); screamCanvas.classList.add('flash-red');
+      setTimeout(() => { w.classList.remove('show'); screamCanvas.classList.remove('flash-red'); }, 500);
     }
-
     async function startScream() {
       try {
         const stream = await navigator.mediaDevices.getUserMedia({audio:true});
-        audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        analyser = audioContext.createAnalyser();
-        microphone = audioContext.createMediaStreamSource(stream);
+        screamAudioContext = new (window.AudioContext || window.webkitAudioContext)();
+        analyser = screamAudioContext.createAnalyser();
+        microphone = screamAudioContext.createMediaStreamSource(stream);
         microphone.connect(analyser);
         analyser.fftSize = 256;
         dataArray = new Uint8Array(analyser.frequencyBinCount);
         
-        screamRunning = true;
-        screamScore = 0;
-        screamLives = 3;
-        player = {x:50, y:300, vy:0, invincible:false};
-        obstacles = [];
-        screamFrame = 0;
-        screamSpeed = 3;
+        screamRunning = true; screamScore = 0; screamLives = 3;
+        player = {x:50, y:300, vy:0, invincible:false}; obstacles = []; screamFrame = 0; screamSpeed = 3;
         document.getElementById('screamScore').textContent = 0;
-        updateScreamLives();
-        screamLoop();
-      } catch(e) {
-        alert('🎤 Microphone access required! Please allow microphone.');
-      }
+        updateScreamLives(); screamLoop();
+      } catch(e) { alert('🎤 Microphone access required!'); }
     }
-
-    function stopScream() {
-      screamRunning = false;
-      if(audioContext) audioContext.close();
-    }
-
+    function stopScream() { screamRunning = false; if(screamAudioContext) screamAudioContext.close(); }
     function screamLoop() {
       if(!screamRunning) return;
-      
-      // Progressive speed
       if(screamScore > 5) screamSpeed = 4;
       if(screamScore > 15) screamSpeed = 5;
       if(screamScore > 30) screamSpeed = 6;
-      if(screamScore > 50) screamSpeed = 7;
       
       analyser.getByteFrequencyData(dataArray);
       const volume = dataArray.reduce((a,b)=>a+b,0) / dataArray.length;
-      
       document.getElementById('micWave').style.height = (volume/255*100)+'%';
       
-      // More sensitive - lower threshold from 40 to 20
-      if(volume > 20) {
-        player.vy = -12 * (volume/180); // Easier control
-      } else {
-        player.vy += 0.8;
-      }
-      
+      if(volume > 20) player.vy = -12 * (volume/180);
+      else player.vy += 0.8;
       player.y += player.vy;
       
-      // Wall bounce (no damage!)
-      if(player.y > 370) {
-        player.y = 370;
-        player.vy = -player.vy * 0.5;
-        screamCanvas.classList.add('shake');
-        showScreamWarning();
-        setTimeout(() => screamCanvas.classList.remove('shake'), 300);
-      }
-      if(player.y < 30) {
-        player.y = 30;
-        player.vy = -player.vy * 0.5;
-        screamCanvas.classList.add('shake');
-        showScreamWarning();
-        setTimeout(() => screamCanvas.classList.remove('shake'), 300);
-      }
+      if(player.y > 370) { player.y = 370; player.vy = -player.vy * 0.5; screamCanvas.classList.add('shake'); showScreamWarning(); setTimeout(() => screamCanvas.classList.remove('shake'), 300); }
+      if(player.y < 30) { player.y = 30; player.vy = -player.vy * 0.5; screamCanvas.classList.add('shake'); showScreamWarning(); setTimeout(() => screamCanvas.classList.remove('shake'), 300); }
       
-      screamCtx.fillStyle = '#87CEEB';
-      screamCtx.fillRect(0,0,400,400);
+      screamCtx.fillStyle = '#87CEEB'; screamCtx.fillRect(0,0,400,400);
+      screamCtx.fillStyle = '#8B4513'; screamCtx.fillRect(0,370,400,30);
       
-      screamCtx.fillStyle = '#8B4513';
-      screamCtx.fillRect(0,370,400,30);
-      
-      // Draw player with expression based on volume
-      screamCtx.save();
-      screamCtx.translate(player.x, player.y);
-      if(player.invincible) {
-        screamCtx.globalAlpha = Math.sin(Date.now()/100) * 0.5 + 0.5;
-      }
+      screamCtx.save(); screamCtx.translate(player.x, player.y);
+      if(player.invincible) screamCtx.globalAlpha = Math.sin(Date.now()/100) * 0.5 + 0.5;
       screamCtx.fillStyle = volume > 80 ? '#FF6B9D' : '#FFD700';
-      screamCtx.beginPath();
-      screamCtx.arc(0, 0, 20, 0, Math.PI*2);
-      screamCtx.fill();
-      
-      // Mouth (open when loud!)
+      screamCtx.beginPath(); screamCtx.arc(0, 0, 20, 0, Math.PI*2); screamCtx.fill();
       screamCtx.fillStyle = '#000';
-      if(volume > 50) {
-        screamCtx.beginPath();
-        screamCtx.arc(0, 5, volume > 80 ? 10 : 6, 0, Math.PI);
-        screamCtx.fill();
-      } else {
-        screamCtx.fillRect(-6, 8, 12, 3);
-      }
-      
-      // Eyes
+      if(volume > 50) { screamCtx.beginPath(); screamCtx.arc(0, 5, volume > 80 ? 10 : 6, 0, Math.PI); screamCtx.fill(); }
+      else screamCtx.fillRect(-6, 8, 12, 3);
       screamCtx.fillRect(-8, -5, 5, volume > 70 ? 8 : 5);
       screamCtx.fillRect(3, -5, 5, volume > 70 ? 8 : 5);
       screamCtx.restore();
       
-      if(screamFrame % Math.max(40, 70-screamScore) === 0) {
-        obstacles.push({x:400, h:50+Math.random()*100, scored:false});
-      }
+      if(screamFrame % Math.max(40, 70-screamScore) === 0) obstacles.push({x:400, h:50+Math.random()*100, scored:false});
       
       obstacles.forEach((o, i) => {
         o.x -= screamSpeed;
-        
-        screamCtx.fillStyle = '#FF6B9D';
-        screamCtx.fillRect(o.x, 370-o.h, 40, o.h);
+        screamCtx.fillStyle = '#FF6B9D'; screamCtx.fillRect(o.x, 370-o.h, 40, o.h);
         
         if(o.x+40 < player.x && !o.scored) {
-          screamScore++;
-          o.scored = true;
+          screamScore++; o.scored = true;
           document.getElementById('screamScore').textContent = screamScore;
           if(screamSoundOn) playScoreSound();
         }
         
-        // Collision with obstacles = lose life
         if(!player.invincible && (player.x+20>o.x && player.x-20<o.x+40) && player.y+20>370-o.h) {
-          screamLives--;
-          updateScreamLives();
-          player.invincible = true;
-          player.vy = -10;
-          player.y -= 30;
+          screamLives--; updateScreamLives();
+          player.invincible = true; player.vy = -10; player.y -= 30;
           if(screamSoundOn) playHitSound();
-          
           setTimeout(() => player.invincible = false, 2000);
-          
           if(screamLives <= 0) {
             screamRunning = false;
-            if(screamScore > screamBest) {
-              screamBest = screamScore;
-              localStorage.setItem('screamBest', screamBest);
-              document.getElementById('screamBest').textContent = screamBest;
-            }
+            if(screamScore > screamBest) { screamBest = screamScore; localStorage.setItem('screamBest', screamBest); document.getElementById('screamBest').textContent = screamBest; }
             stopScream();
             alert('💥 Game Over!\nScore: '+screamScore+'\n🏆 Best: '+screamBest);
             return;
           }
         }
-        
         if(o.x < -40) obstacles.splice(i,1);
       });
       
@@ -1767,29 +1464,17 @@
       requestAnimationFrame(screamLoop);
     }
 
-    // Keyboard support for Flappy
-    document.addEventListener('keydown', e => {
-      if(e.key===' ' && flappyRunning) {
-        e.preventDefault();
-        flappyJump();
-      }
-    });
-
     // Translations
     const translations = {
       en: {subtitle:'Where meme culture meets transparent blockchain — Play games, have fun, join the community! 🚀',buyBtn:'Buy on PancakeSwap',viewBtn:'View on BscScan',copyBtn:'Copy Contract'},
       it: {subtitle:'Dove la cultura meme incontra la blockchain trasparente — Gioca, divertiti e unisciti alla community! 🚀',buyBtn:'Compra su PancakeSwap',viewBtn:'Vedi su BscScan',copyBtn:'Copia Contratto'},
-      fr: {subtitle:'Où la culture des mèmes rencontre la blockchain transparente — Jouez, amusez-vous et rejoignez la communauté! 🚀',buyBtn:'Acheter sur PancakeSwap',viewBtn:'Voir sur BscScan',copyBtn:'Copier le Contrat'},
-      es: {subtitle:'¡Donde la cultura de los memes se encuentra con blockchain transparente — Juega, diviértete y únete a la comunidad! 🚀',buyBtn:'Comprar en PancakeSwap',viewBtn:'Ver en BscScan',copyBtn:'Copiar Contrato'},
-      cn: {subtitle:'模因文化与透明区块链相遇 — 玩游戏，享受乐趣，加入社区！🚀',buyBtn:'在PancakeSwap购买',viewBtn:'在BscScan查看',copyBtn:'复制合约'}
+      fr: {subtitle:'Où la culture des mèmes rencontre la blockchain transparente — Jouez, amusez-vous! 🚀',buyBtn:'Acheter sur PancakeSwap',viewBtn:'Voir sur BscScan',copyBtn:'Copier le Contrat'},
+      es: {subtitle:'¡Donde la cultura de los memes se encuentra con blockchain transparente! 🚀',buyBtn:'Comprar en PancakeSwap',viewBtn:'Ver en BscScan',copyBtn:'Copiar Contrato'},
+      cn: {subtitle:'模因文化与透明区块链相遇 🚀',buyBtn:'在PancakeSwap购买',viewBtn:'在BscScan查看',copyBtn:'复制合约'}
     };
-
     function changeLang(lang) {
       const t = translations[lang];
-      Object.keys(t).forEach(key => {
-        const el = document.getElementById(key);
-        if(el) el.textContent = t[key];
-      });
+      Object.keys(t).forEach(key => { const el = document.getElementById(key); if(el) el.textContent = t[key]; });
     }
   </script>
 </body>
