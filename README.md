@@ -58,7 +58,7 @@
 
 | Platform | Link |
 |----------|------|
-| 🌐 **Website** | https://nedja80.github.io/4EverMeme/ |
+| 🌐 **Website** |(https://4evermeme.github.io/4EverMeme/)|
 | 📧 **Email** | 4evermeme.official@gmail.com |
 | 💻 **GitHub** | https://github.com/nedja80/4EverMeme |
 | 🔍 **BscScan** | [View Contract](https://bscscan.com/token/0xDE008b6e97ad5D05D4f49D3949E91E165f3092Ef) |
@@ -186,7 +186,7 @@ Submit a pull request or [open an issue](https://github.com/nedja80/4EverMeme/is
 |---------|------|
 | 📧 **Email** | 4evermeme.official@gmail.com |
 | 💻 **GitHub Issues** | [Open an issue](https://github.com/nedja80/4EverMeme/issues) |
-| 🌐 **Website** | https://nedja80.github.io/4EverMeme/ |
+| 🌐 **Website** |(https://4evermeme.github.io/4EverMeme/)|
 
 ---
 
